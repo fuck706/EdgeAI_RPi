@@ -52,7 +52,7 @@ function initEmptyChart() {
             },
             plugins: {
                 legend: {
-                    display: false
+                    display: true
                 }
             }
         }
