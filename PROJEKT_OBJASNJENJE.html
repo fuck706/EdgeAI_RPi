@@ -1,0 +1,2216 @@
+<!DOCTYPE html><html><head><title></title><meta charset="utf-8"><style>* {
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 100%;
+}
+
+body {
+	font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell',
+		'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+	line-height: 1.6;
+	font-size: 0.6875em; /* 11 pt */
+	color: #111;
+	margin: 0;
+}
+
+body > :first-child {
+	padding-top: 0;
+	margin-top: 0;
+}
+
+body > :last-child {
+	margin-bottom: 0;
+	padding-bottom: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin: 0;
+	padding: 0.5em 0 0.25em;
+}
+
+h5,
+h6 {
+	padding: 0;
+}
+
+h5 {
+	font-size: 1em;
+}
+
+h6 {
+	font-size: 0.875em;
+	text-transform: uppercase;
+}
+
+p {
+	margin: 0.25em 0 1em;
+}
+
+blockquote {
+	margin: 0.5em 0 1em;
+	padding-left: 0.5em;
+	padding-right: 1em;
+	border-left: 4px solid gainsboro;
+	font-style: italic;
+}
+
+ul,
+ol {
+	margin: 0;
+	margin-left: 1em;
+	padding: 0 1.5em 0.5em;
+}
+
+pre {
+	white-space: pre-wrap;
+}
+
+h1 code,
+h2 code,
+h3 code,
+h4 code,
+h5 code,
+h6 code,
+p code,
+li code,
+pre code {
+	background-color: #f8f8f8;
+	padding: 0.1em 0.375em;
+	border: 1px solid #f8f8f8;
+	border-radius: 0.25em;
+	font-family: monospace;
+	font-size: 1.2em;
+}
+
+pre code {
+	display: block;
+	padding: 0.5em;
+}
+
+.page-break {
+	page-break-after: always;
+}
+
+img {
+	max-width: 100%;
+	margin: 1em 0;
+}
+
+table {
+	border-spacing: 0;
+	border-collapse: collapse;
+	display: block;
+	margin: 0 0 1em;
+	width: 100%;
+	overflow: auto;
+}
+
+table th,
+table td {
+	padding: 0.5em 1em;
+	border: 1px solid gainsboro;
+}
+
+table th {
+	font-weight: 600;
+}
+
+table tr {
+	background-color: white;
+	border-top: 1px solid gainsboro;
+}
+
+table tr:nth-child(2n) {
+	background-color: whitesmoke;
+}
+/*# sourceURL=C:\Users\gabri\AppData\Local\nvm\v22.20.0\node_modules\md-to-pdf\markdown.css*/</style><style>pre code.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 1em
+}
+code.hljs {
+  padding: 3px 5px
+}
+/*!
+  Theme: GitHub
+  Description: Light theme as seen on github.com
+  Author: github.com
+  Maintainer: @Hirse
+  Updated: 2021-05-15
+
+  Outdated base version: https://github.com/primer/github-syntax-light
+  Current colors taken from GitHub's CSS
+*/
+.hljs {
+  color: #24292e;
+  background: #ffffff
+}
+.hljs-doctag,
+.hljs-keyword,
+.hljs-meta .hljs-keyword,
+.hljs-template-tag,
+.hljs-template-variable,
+.hljs-type,
+.hljs-variable.language_ {
+  /* prettylights-syntax-keyword */
+  color: #d73a49
+}
+.hljs-title,
+.hljs-title.class_,
+.hljs-title.class_.inherited__,
+.hljs-title.function_ {
+  /* prettylights-syntax-entity */
+  color: #6f42c1
+}
+.hljs-attr,
+.hljs-attribute,
+.hljs-literal,
+.hljs-meta,
+.hljs-number,
+.hljs-operator,
+.hljs-variable,
+.hljs-selector-attr,
+.hljs-selector-class,
+.hljs-selector-id {
+  /* prettylights-syntax-constant */
+  color: #005cc5
+}
+.hljs-regexp,
+.hljs-string,
+.hljs-meta .hljs-string {
+  /* prettylights-syntax-string */
+  color: #032f62
+}
+.hljs-built_in,
+.hljs-symbol {
+  /* prettylights-syntax-variable */
+  color: #e36209
+}
+.hljs-comment,
+.hljs-code,
+.hljs-formula {
+  /* prettylights-syntax-comment */
+  color: #6a737d
+}
+.hljs-name,
+.hljs-quote,
+.hljs-selector-tag,
+.hljs-selector-pseudo {
+  /* prettylights-syntax-entity-tag */
+  color: #22863a
+}
+.hljs-subst {
+  /* prettylights-syntax-storage-modifier-import */
+  color: #24292e
+}
+.hljs-section {
+  /* prettylights-syntax-markup-heading */
+  color: #005cc5;
+  font-weight: bold
+}
+.hljs-bullet {
+  /* prettylights-syntax-markup-list */
+  color: #735c0f
+}
+.hljs-emphasis {
+  /* prettylights-syntax-markup-italic */
+  color: #24292e;
+  font-style: italic
+}
+.hljs-strong {
+  /* prettylights-syntax-markup-bold */
+  color: #24292e;
+  font-weight: bold
+}
+.hljs-addition {
+  /* prettylights-syntax-markup-inserted */
+  color: #22863a;
+  background-color: #f0fff4
+}
+.hljs-deletion {
+  /* prettylights-syntax-markup-deleted */
+  color: #b31d28;
+  background-color: #ffeef0
+}
+.hljs-char.escape_,
+.hljs-link,
+.hljs-params,
+.hljs-property,
+.hljs-punctuation,
+.hljs-tag {
+  /* purposely ignored */
+  
+}/*# sourceURL=C:\Users\gabri\AppData\Local\nvm\v22.20.0\node_modules\md-to-pdf\node_modules\highlight.js\styles\github.css*/</style></head>
+	<body class="">
+		<h1 id="📚-kompletno-objašnjenje-projekta-edgeai-rpi-docker">📚 KOMPLETNO OBJAŠNJENJE PROJEKTA: EdgeAI RPi Docker</h1>
+<h2 id="🎯-pregled-projekta">🎯 PREGLED PROJEKTA</h2>
+<h3 id="što-ovaj-projekt-radi">Što ovaj projekt radi?</h3>
+<p>Ovaj projekt je <strong>sustav za prediktivno održavanje</strong> industrijskih motora. Zamislite tvornicu s motorima - ovaj sustav:</p>
+<ol>
+<li><strong>Prima podatke</strong> sa senzora (vibracije motora)</li>
+<li><strong>Detektira kvarove</strong> pomoću AI modela na mikrokontroleru</li>
+<li><strong>Sprema podatke</strong> u bazu podataka</li>
+<li><strong>Prikazuje rezultate</strong> na web dashboard-u u realnom vremenu</li>
+</ol>
+<h3 id="arhitektura-sustava">Arhitektura sustava</h3>
+<pre><code>┌─────────────────┐     ┌──────────────┐     ┌─────────────────┐
+│   nRF5340DK     │────►│  MQTT Broker │────►│   Go Backend    │
+│   (Senzor+AI)   │     │  (Mosquitto) │     │   (Server)      │
+└─────────────────┘     └──────────────┘     └────────┬────────┘
+                                                      │
+                                    ┌─────────────────┼─────────────────┐
+                                    ▼                 ▼                 ▼
+                             ┌──────────┐      ┌──────────────┐   ┌──────────┐
+                             │TimescaleDB│      │  WebSocket   │   │ REST API │
+                             │  (Baza)   │      │  (Real-time) │   │  (HTTP)  │
+                             └──────────┘      └──────────────┘   └──────────┘
+                                                      │
+                                                      ▼
+                                              ┌──────────────┐
+                                              │  Dashboard   │
+                                              │  (Browser)   │
+                                              └──────────────┘
+</code></pre>
+<hr>
+<h1 id="📦-docker-i-kontejnerizacija">📦 DOCKER I KONTEJNERIZACIJA</h1>
+<h2 id="što-je-docker">Što je Docker?</h2>
+<p>Docker je tehnologija koja omogućuje <strong>pakiranje aplikacija u "kontejnere"</strong>. Kontejner je kao mali virtualni stroj, ali puno lakši i brži.</p>
+<p><strong>Analogija</strong>: Zamislite shipping container (kontejner za transport). Sve stavite unutra i možete ga prevoziti bilo gdje - na brod, kamion, vlak. Docker kontejner je isto - pakira vašu aplikaciju sa svime što joj treba i možete je pokrenuti bilo gdje.</p>
+<h3 id="zašto-docker">Zašto Docker?</h3>
+<ol>
+<li><strong>Konzistentnost</strong> - "Works on my machine" problem nestaje</li>
+<li><strong>Izolacija</strong> - aplikacije ne utječu jedna na drugu</li>
+<li><strong>Jednostavno deployanje</strong> - jedna naredba pokreće sve</li>
+</ol>
+<hr>
+<h1 id="📄-datoteka-docker-composeyml">📄 DATOTEKA: docker-compose.yml</h1>
+<p>Docker Compose omogućuje definiranje i pokretanje <strong>više kontejnera odjednom</strong>. Umjesto da ručno pokrećete svaki kontejner, napišete jednu datoteku i pokrenete sve.</p>
+<pre><code class="hljs yaml"><span class="hljs-attr">services:</span>
+</code></pre>
+<p><strong>Objašnjenje</strong>: <code>services:</code> označava početak definicije svih servisa (kontejnera) u aplikaciji.</p>
+<hr>
+<h2 id="servis-baza-podataka-db">Servis: Baza podataka (db)</h2>
+<pre><code class="hljs yaml">  <span class="hljs-attr">db:</span>
+    <span class="hljs-attr">image:</span> <span class="hljs-string">timescale/timescaledb:2.14.2-pg14</span>
+</code></pre>
+<p><strong>Objašnjenje</strong>:</p>
+<ul>
+<li><code>db:</code> - naziv servisa (možemo ga koristiti kao hostname unutar Docker mreže)</li>
+<li><code>image:</code> - koristi gotovu sliku s Docker Hub-a</li>
+<li><code>timescale/timescaledb:2.14.2-pg14</code> - TimescaleDB verzija 2.14.2 bazirana na PostgreSQL 14</li>
+</ul>
+<h3 id="što-je-timescaledb">Što je TimescaleDB?</h3>
+<p>TimescaleDB je <strong>proširenje PostgreSQL-a</strong> optimizirano za <strong>vremenske serije podataka</strong> (time-series data). Savršeno za senzorske podatke jer:</p>
+<ul>
+<li>Automatski particionira podatke po vremenu</li>
+<li>Brži upiti na velike količine podataka</li>
+<li>Kompresija starih podataka</li>
+</ul>
+<pre><code class="hljs yaml">    <span class="hljs-attr">container_name:</span> <span class="hljs-string">edgeai-db</span>
+</code></pre>
+<p><strong>Objašnjenje</strong>: Eksplicitno imenuje kontejner. Bez ovoga Docker bi generirao nasumično ime poput <code>projekt_db_1</code>.</p>
+<pre><code class="hljs yaml">    <span class="hljs-attr">environment:</span>
+      <span class="hljs-attr">POSTGRES_DB:</span> <span class="hljs-string">edgeai</span>
+      <span class="hljs-attr">POSTGRES_USER:</span> <span class="hljs-string">edgeai</span>
+      <span class="hljs-attr">POSTGRES_PASSWORD:</span> <span class="hljs-string">edgeai</span>
+</code></pre>
+<p><strong>Objašnjenje</strong>: </p>
+<ul>
+<li><code>environment:</code> - definira varijable okoline unutar kontejnera</li>
+<li><code>POSTGRES_DB</code> - naziv baze podataka koja će se kreirati pri pokretanju</li>
+<li><code>POSTGRES_USER</code> - korisničko ime za pristup bazi</li>
+<li><code>POSTGRES_PASSWORD</code> - lozinka za korisnika</li>
+</ul>
+<h3 id="što-su-environment-variables-varijable-okoline">Što su Environment Variables (Varijable Okoline)?</h3>
+<p>Varijable okoline su <strong>parovi ključ-vrijednost</strong> dostupni aplikaciji za vrijeme izvršavanja. Koriste se za:</p>
+<ul>
+<li>Konfiguraciju bez mijenjanja koda</li>
+<li>Skrivanje osjetljivih podataka (lozinke)</li>
+<li>Različite postavke za development/production</li>
+</ul>
+<pre><code class="hljs yaml">    <span class="hljs-attr">volumes:</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-string">db-data:/var/lib/postgresql/data</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-string">./db/setup.sql:/docker-entrypoint-initdb.d/setup.sql</span>
+</code></pre>
+<p><strong>Objašnjenje</strong>:</p>
+<ul>
+<li><code>volumes:</code> - mapira podatke između host računala i kontejnera</li>
+<li><code>db-data:/var/lib/postgresql/data</code> - <strong>named volume</strong> - Docker upravlja lokacijom, podaci opstaju i kada se kontejner obriše</li>
+<li><code>./db/setup.sql:/docker-entrypoint-initdb.d/setup.sql</code> - <strong>bind mount</strong> - kopira našu SQL skriptu u poseban direktorij koji PostgreSQL automatski izvršava pri prvom pokretanju</li>
+</ul>
+<h3 id="što-je-volume">Što je Volume?</h3>
+<p>Volume je mehanizam za <strong>trajno pohranjivanje podataka</strong>. Bez volumea, svi podaci u kontejneru bi nestali kad se kontejner obriše.</p>
+<pre><code class="hljs yaml">    <span class="hljs-attr">ports:</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-string">"5432:5432"</span>
+</code></pre>
+<p><strong>Objašnjenje</strong>:</p>
+<ul>
+<li><code>ports:</code> - mapira portove između host-a i kontejnera</li>
+<li><code>"5432:5432"</code> - format je <code>HOST_PORT:CONTAINER_PORT</code></li>
+<li>Port 5432 je standardni port za PostgreSQL</li>
+<li>Omogućuje pristup bazi s host računala (npr. za debugging)</li>
+</ul>
+<h3 id="što-je-port">Što je Port?</h3>
+<p>Port je <strong>virtualna "vrata"</strong> kroz koja aplikacije komuniciraju preko mreže. Svaka aplikacija sluša na određenom portu (npr. web serveri tipično na 80 ili 443).</p>
+<pre><code class="hljs yaml">    <span class="hljs-attr">healthcheck:</span>
+      <span class="hljs-attr">test:</span> [<span class="hljs-string">"CMD-SHELL"</span>, <span class="hljs-string">"pg_isready -U edgeai"</span>]
+      <span class="hljs-attr">interval:</span> <span class="hljs-string">5s</span>
+      <span class="hljs-attr">timeout:</span> <span class="hljs-string">5s</span>
+      <span class="hljs-attr">retries:</span> <span class="hljs-number">5</span>
+</code></pre>
+<p><strong>Objašnjenje</strong>:</p>
+<ul>
+<li><code>healthcheck:</code> - definira kako Docker provjerava je li servis "zdrav"</li>
+<li><code>test:</code> - naredba koja se izvršava za provjeru</li>
+<li><code>pg_isready</code> - PostgreSQL alat koji provjerava može li baza primati konekcije</li>
+<li><code>interval: 5s</code> - provjera se izvršava svakih 5 sekundi</li>
+<li><code>timeout: 5s</code> - ako nema odgovora unutar 5 sekundi, smatra se neuspjehom</li>
+<li><code>retries: 5</code> - nakon 5 neuspjelih provjera, servis se smatra nezdravim</li>
+</ul>
+<hr>
+<h2 id="servis-mqtt-broker-mqtt">Servis: MQTT Broker (mqtt)</h2>
+<pre><code class="hljs yaml">  <span class="hljs-attr">mqtt:</span>
+    <span class="hljs-attr">image:</span> <span class="hljs-string">eclipse-mosquitto:2</span>
+</code></pre>
+<p><strong>Objašnjenje</strong>: Koristi Eclipse Mosquitto verziju 2 - popularan open-source MQTT broker.</p>
+<h3 id="što-je-mqtt">Što je MQTT?</h3>
+<p>MQTT (Message Queuing Telemetry Transport) je <strong>lagani protokol za razmjenu poruka</strong>. Dizajniran za:</p>
+<ul>
+<li>IoT uređaje s ograničenim resursima</li>
+<li>Nestabilne mrežne veze</li>
+<li>Komunikaciju publish/subscribe tipa</li>
+</ul>
+<h3 id="publishsubscribe-pattern">Publish/Subscribe Pattern</h3>
+<pre><code>Publisher (Senzor)          Broker              Subscriber (Backend)
+      │                       │                        │
+      │──publish("temp/1")───►│                        │
+      │                       │──forward───────────────►│
+      │                       │                        │
+</code></pre>
+<ul>
+<li><strong>Publisher</strong> objavljuje poruku na određeni <strong>topic</strong> (kanal)</li>
+<li><strong>Subscriber</strong> se pretplati na topic</li>
+<li><strong>Broker</strong> prosljeđuje poruke od publishera subscriberima</li>
+</ul>
+<pre><code class="hljs yaml">    <span class="hljs-attr">container_name:</span> <span class="hljs-string">edgeai-mqtt</span>
+    <span class="hljs-attr">ports:</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-string">"1883:1883"</span>
+</code></pre>
+<p><strong>Objašnjenje</strong>: Port 1883 je standardni port za MQTT (nekriptirani).</p>
+<pre><code class="hljs yaml">    <span class="hljs-attr">volumes:</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-string">./mqtt/config/mosquitto.conf:/mosquitto/config/mosquitto.conf</span>
+</code></pre>
+<p><strong>Objašnjenje</strong>: Mapira našu konfiguracijsku datoteku unutar kontejnera.</p>
+<pre><code class="hljs yaml">    <span class="hljs-attr">command:</span> <span class="hljs-string">mosquitto</span> <span class="hljs-string">-c</span> <span class="hljs-string">/mosquitto/config/mosquitto.conf</span>
+</code></pre>
+<p><strong>Objašnjenje</strong>: </p>
+<ul>
+<li><code>command:</code> - naredba koja se izvršava pri pokretanju kontejnera</li>
+<li><code>-c</code> flag specificira putanju do konfiguracijske datoteke</li>
+<li>Zamjenjuje zadanu naredbu iz Docker slike</li>
+</ul>
+<hr>
+<h2 id="servis-backend-backend">Servis: Backend (backend)</h2>
+<pre><code class="hljs yaml">  <span class="hljs-attr">backend:</span>
+    <span class="hljs-attr">build:</span>
+      <span class="hljs-attr">context:</span> <span class="hljs-string">.</span>
+      <span class="hljs-attr">dockerfile:</span> <span class="hljs-string">Dockerfile</span>
+</code></pre>
+<p><strong>Objašnjenje</strong>:</p>
+<ul>
+<li><code>build:</code> - umjesto gotove slike, Docker će <strong>izgraditi</strong> sliku iz Dockerfile-a</li>
+<li><code>context: .</code> - kontekst gradnje je trenutni direktorij (sve datoteke su dostupne)</li>
+<li><code>dockerfile: Dockerfile</code> - naziv datoteke s uputama za gradnju</li>
+</ul>
+<pre><code class="hljs yaml">    <span class="hljs-attr">container_name:</span> <span class="hljs-string">edgeai-backend</span>
+    <span class="hljs-attr">depends_on:</span>
+      <span class="hljs-attr">db:</span>
+        <span class="hljs-attr">condition:</span> <span class="hljs-string">service_healthy</span>
+      <span class="hljs-attr">mqtt:</span>
+        <span class="hljs-attr">condition:</span> <span class="hljs-string">service_started</span>
+</code></pre>
+<p><strong>Objašnjenje</strong>:</p>
+<ul>
+<li><code>depends_on:</code> - definira redoslijed pokretanja servisa</li>
+<li><code>condition: service_healthy</code> - backend čeka dok baza ne prođe healthcheck</li>
+<li><code>condition: service_started</code> - čeka samo da se mqtt kontejner pokrene</li>
+</ul>
+<h3 id="zašto-depends_on">Zašto depends_on?</h3>
+<p>Backend treba bazu i MQTT broker da bi radio. Bez <code>depends_on</code>, svi kontejneri bi se pokrenuli istovremeno i backend bi mogao pokušati spojiti se na bazu koja još nije spremna.</p>
+<pre><code class="hljs yaml">    <span class="hljs-attr">environment:</span>
+      <span class="hljs-attr">POSTGRES_URL:</span> <span class="hljs-string">"postgres://edgeai:edgeai@db:5432/edgeai?sslmode=disable"</span>
+      <span class="hljs-attr">MQTT_BROKER:</span> <span class="hljs-string">"tcp://mqtt:1883"</span>
+      <span class="hljs-attr">SERVER_ADDR:</span> <span class="hljs-string">"0.0.0.0:8080"</span>
+      <span class="hljs-attr">DASH_USER:</span> <span class="hljs-string">"admin"</span>
+      <span class="hljs-attr">DASH_PASS:</span> <span class="hljs-string">"admin123"</span>
+</code></pre>
+<p><strong>Objašnjenje</strong>:</p>
+<ul>
+<li><code>POSTGRES_URL</code> - Connection string za bazu podataka<ul>
+<li>Format: <code>postgres://user:password@host:port/database?options</code></li>
+<li><code>@db</code> - koristi ime servisa kao hostname (Docker DNS)</li>
+<li><code>sslmode=disable</code> - bez SSL enkripcije (OK za development)</li>
+</ul>
+</li>
+<li><code>MQTT_BROKER</code> - adresa MQTT brokera<ul>
+<li><code>tcp://mqtt:1883</code> - TCP protokol, host je ime servisa</li>
+</ul>
+</li>
+<li><code>SERVER_ADDR</code> - adresa na kojoj backend sluša<ul>
+<li><code>0.0.0.0</code> znači "sva mrežna sučelja"</li>
+</ul>
+</li>
+<li><code>DASH_USER/DASH_PASS</code> - kredencijali za pristup dashboardu</li>
+</ul>
+<pre><code class="hljs yaml">    <span class="hljs-attr">ports:</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-string">"8080:8080"</span>
+</code></pre>
+<p><strong>Objašnjenje</strong>: Izlaže backend na portu 8080.</p>
+<pre><code class="hljs yaml">    <span class="hljs-attr">restart:</span> <span class="hljs-string">unless-stopped</span>
+</code></pre>
+<p><strong>Objašnjenje</strong>: Restart politika - automatski restartira kontejner osim ako nije ručno zaustavljen. Korisno za production jer se servis automatski oporavlja od pada.</p>
+<hr>
+<h2 id="named-volume">Named Volume</h2>
+<pre><code class="hljs yaml"><span class="hljs-attr">volumes:</span>
+  <span class="hljs-attr">db-data:</span>
+</code></pre>
+<p><strong>Objašnjenje</strong>: Deklarira named volume <code>db-data</code>. Docker ga kreira i upravlja njime automatski.</p>
+<hr>
+<h1 id="📄-datoteka-dockerfile">📄 DATOTEKA: Dockerfile</h1>
+<p>Dockerfile sadrži <strong>upute za izgradnju Docker slike</strong>. Čitaju se redak po redak, od vrha prema dolje.</p>
+<pre><code class="hljs dockerfile"><span class="hljs-keyword">FROM</span> golang:<span class="hljs-number">1.24</span>-alpine AS builder
+</code></pre>
+<p><strong>Objašnjenje</strong>:</p>
+<ul>
+<li><code>FROM</code> - bazna slika na kojoj gradimo</li>
+<li><code>golang:1.24-alpine</code> - službena Go slika temeljena na Alpine Linuxu</li>
+<li><code>alpine</code> - minimalna Linux distribucija (~5MB)</li>
+<li><code>AS builder</code> - imenuje ovaj stage "builder" (za multi-stage build)</li>
+</ul>
+<h3 id="što-je-multi-stage-build">Što je Multi-Stage Build?</h3>
+<p>Multi-stage build omogućuje <strong>više FROM instrukcija</strong> u jednom Dockerfile-u. Koristimo veliki "builder" stage za kompilaciju, a zatim kopiramo samo rezultat u malu "runtime" sliku.</p>
+<p><strong>Prednosti</strong>:</p>
+<ul>
+<li>Manja konačna slika (nema kompajlera, source koda)</li>
+<li>Bolja sigurnost (manje površine za napade)</li>
+</ul>
+<pre><code class="hljs dockerfile"><span class="hljs-keyword">WORKDIR</span><span class="language-bash"> /app</span>
+</code></pre>
+<p><strong>Objašnjenje</strong>: Postavlja radni direktorij za sve sljedeće naredbe. Ako ne postoji, kreira se automatski.</p>
+<pre><code class="hljs dockerfile"><span class="hljs-comment"># GO module</span>
+<span class="hljs-keyword">COPY</span><span class="language-bash"> backend/go.mod backend/go.sum ./</span>
+<span class="hljs-keyword">RUN</span><span class="language-bash"> go mod download</span>
+</code></pre>
+<p><strong>Objašnjenje</strong>:</p>
+<ul>
+<li><code>COPY backend/go.mod backend/go.sum ./</code> - kopira samo datoteke za dependency management</li>
+<li><code>go mod download</code> - preuzima sve dependencies definirane u go.mod</li>
+</ul>
+<h3 id="zašto-prvo-kopiramo-samo-gomod">Zašto prvo kopiramo samo go.mod?</h3>
+<p>Docker cachira svaki layer (korak). Ako se go.mod ne promijeni, Docker neće ponovno preuzimati dependencies pri svakoj promjeni koda. <strong>Značajno ubrzava build.</strong></p>
+<pre><code class="hljs dockerfile"><span class="hljs-comment"># backend kod</span>
+<span class="hljs-keyword">COPY</span><span class="language-bash"> backend/ .</span>
+</code></pre>
+<p><strong>Objašnjenje</strong>: Kopira cijeli backend direktorij u kontejner.</p>
+<pre><code class="hljs dockerfile"><span class="hljs-keyword">RUN</span><span class="language-bash"> CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -o edgeai-backend</span>
+</code></pre>
+<p><strong>Objašnjenje</strong>:</p>
+<ul>
+<li><code>RUN</code> - izvršava naredbu tijekom gradnje slike</li>
+<li><code>CGO_ENABLED=0</code> - onemogućuje C-Go interop (čista Go binarka)</li>
+<li><code>GOOS=linux</code> - kompilira za Linux OS</li>
+<li><code>GOARCH=amd64</code> - kompilira za 64-bitnu arhitekturu</li>
+<li><code>go build</code> - Go kompajler</li>
+<li><code>-o edgeai-backend</code> - naziv izlazne datoteke</li>
+</ul>
+<h3 id="cross-compilation">Cross-Compilation</h3>
+<p>Go omogućuje kompilaciju za bilo koji OS i arhitekturu s bilo kojeg računala. Možemo na Windows-u kompilirati za Linux!</p>
+<hr>
+<h2 id="drugi-stage---runtime">Drugi Stage - Runtime</h2>
+<pre><code class="hljs dockerfile"><span class="hljs-keyword">FROM</span> alpine:latest
+</code></pre>
+<p><strong>Objašnjenje</strong>: Počinjemo novi stage s minimalnom Alpine slikom.</p>
+<pre><code class="hljs dockerfile"><span class="hljs-comment"># CA certifikati (PostgreSQL, MQTT)</span>
+<span class="hljs-keyword">RUN</span><span class="language-bash"> apk --no-cache add ca-certificates</span>
+</code></pre>
+<p><strong>Objašnjenje</strong>:</p>
+<ul>
+<li><code>apk</code> - Alpine package manager</li>
+<li><code>--no-cache</code> - ne sprema cache (manja slika)</li>
+<li><code>ca-certificates</code> - SSL certifikati za sigurne konekcije</li>
+</ul>
+<pre><code class="hljs dockerfile"><span class="hljs-keyword">WORKDIR</span><span class="language-bash"> /app</span>
+
+<span class="hljs-keyword">COPY</span><span class="language-bash"> --from=builder /app/edgeai-backend .</span>
+</code></pre>
+<p><strong>Objašnjenje</strong>:</p>
+<ul>
+<li><code>COPY --from=builder</code> - kopira iz prijašnjeg stage-a</li>
+<li>Samo kompilirana binarka, bez source koda!</li>
+</ul>
+<pre><code class="hljs dockerfile"><span class="hljs-keyword">COPY</span><span class="language-bash"> backend/templates ./templates</span>
+<span class="hljs-keyword">COPY</span><span class="language-bash"> backend/static ./static</span>
+</code></pre>
+<p><strong>Objašnjenje</strong>: Kopira HTML template i statičke datoteke (CSS, JS).</p>
+<pre><code class="hljs dockerfile"><span class="hljs-keyword">EXPOSE</span> <span class="hljs-number">8080</span>
+</code></pre>
+<p><strong>Objašnjenje</strong>: Dokumentira da kontejner sluša na portu 8080. Samo dokumentacija, ne otvara stvarno port.</p>
+<pre><code class="hljs dockerfile"><span class="hljs-keyword">CMD</span><span class="language-bash"> [<span class="hljs-string">"./edgeai-backend"</span>]</span>
+</code></pre>
+<p><strong>Objašnjenje</strong>: Naredba koja se izvršava pri pokretanju kontejnera. Pokreće našu aplikaciju.</p>
+<h3 id="razlika-run-vs-cmd">Razlika RUN vs CMD</h3>
+<ul>
+<li><code>RUN</code> - izvršava se <strong>tijekom gradnje</strong> slike</li>
+<li><code>CMD</code> - izvršava se <strong>pri pokretanju</strong> kontejnera</li>
+</ul>
+<hr>
+<h1 id="📄-datoteka-gomod">📄 DATOTEKA: go.mod</h1>
+<pre><code class="hljs go">module edgeai
+</code></pre>
+<p><strong>Objašnjenje</strong>: Definira naziv Go modula. Svi paketi unutar projekta su dio ovog modula.</p>
+<h3 id="što-je-go-module">Što je Go Module?</h3>
+<p>Go module je sustav za upravljanje dependencies u Go-u. Zamjenjuje stariji GOPATH sustav.</p>
+<pre><code class="hljs go"><span class="hljs-keyword">go</span> <span class="hljs-number">1.24</span><span class="hljs-number">.0</span>
+</code></pre>
+<p><strong>Objašnjenje</strong>: Minimalna verzija Go-a potrebna za ovaj projekt.</p>
+<pre><code class="hljs go">toolchain go1<span class="hljs-number">.24</span><span class="hljs-number">.11</span>
+</code></pre>
+<p><strong>Objašnjenje</strong>: Specifična verzija Go toolchaina koju koristimo.</p>
+<pre><code class="hljs go">require (
+    github.com/eclipse/paho.mqtt.golang v1<span class="hljs-number">.5</span><span class="hljs-number">.1</span>
+    github.com/gin-gonic/gin v1<span class="hljs-number">.11</span><span class="hljs-number">.0</span>
+    github.com/gorilla/websocket v1<span class="hljs-number">.5</span><span class="hljs-number">.3</span>
+    github.com/jackc/pgx/v5 v5<span class="hljs-number">.7</span><span class="hljs-number">.6</span>
+    golang.org/x/crypto v0<span class="hljs-number">.46</span><span class="hljs-number">.0</span>
+)
+</code></pre>
+<p><strong>Objašnjenje</strong>: Direktne dependencies (biblioteke koje naš kod koristi):</p>
+<table>
+<thead>
+<tr>
+<th>Biblioteka</th>
+<th>Namjena</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>paho.mqtt.golang</code></td>
+<td>MQTT klijent za Go</td>
+</tr>
+<tr>
+<td><code>gin-gonic/gin</code></td>
+<td>Web framework (HTTP server)</td>
+</tr>
+<tr>
+<td><code>gorilla/websocket</code></td>
+<td>WebSocket implementacija</td>
+</tr>
+<tr>
+<td><code>pgx/v5</code></td>
+<td>PostgreSQL driver za Go</td>
+</tr>
+<tr>
+<td><code>golang.org/x/crypto</code></td>
+<td>Kriptografske funkcije (bcrypt)</td>
+</tr>
+</tbody></table>
+<p>Ostatak <code>require</code> bloka su <strong>indirektne dependencies</strong> - biblioteke koje koriste naše direktne dependencies.</p>
+<hr>
+<h1 id="📄-datoteka-configgo">📄 DATOTEKA: config.go</h1>
+<pre><code class="hljs go"><span class="hljs-keyword">package</span> main
+</code></pre>
+<p><strong>Objašnjenje</strong>: Deklarira da ova datoteka pripada paketu <code>main</code>. U Go-u, <code>package main</code> označava izvršnu aplikaciju (ne biblioteku).</p>
+<pre><code class="hljs go"><span class="hljs-keyword">import</span> (
+    <span class="hljs-string">"log"</span>
+    <span class="hljs-string">"os"</span>
+    <span class="hljs-string">"strings"</span>
+    <span class="hljs-string">"golang.org/x/crypto/bcrypt"</span>
+)
+</code></pre>
+<p><strong>Objašnjenje</strong>: Importira pakete:</p>
+<ul>
+<li><code>log</code> - jednostavno logiranje</li>
+<li><code>os</code> - interakcija s operativnim sustavom (env varijable)</li>
+<li><code>strings</code> - manipulacija stringova</li>
+<li><code>bcrypt</code> - sigurno hashiranje lozinki</li>
+</ul>
+<h3 id="što-je-bcrypt">Što je Bcrypt?</h3>
+<p>Bcrypt je <strong>algoritam za hashiranje lozinki</strong>. Za razliku od običnih hash funkcija (MD5, SHA):</p>
+<ul>
+<li>Namjerno je spor (otežava brute-force napade)</li>
+<li>Automatski dodaje "sol" (salt) - čak i identične lozinke daju različite hashove</li>
+<li>Ima podesiv "cost factor" - možemo ga učiniti još sporijim</li>
+</ul>
+<pre><code class="hljs go"><span class="hljs-keyword">type</span> Config <span class="hljs-keyword">struct</span> {
+    <span class="hljs-comment">// MQTT - postavke</span>
+    MQTTBroker   <span class="hljs-type">string</span> <span class="hljs-string">`json:"mqtt_broker,omitempty"`</span>
+    MQTTTopic    <span class="hljs-type">string</span> <span class="hljs-string">`json:"mqtt_topic,omitempty"`</span>
+    MQTTClient   <span class="hljs-type">string</span> <span class="hljs-string">`json:"mqtt_client,omitempty"`</span>
+    MQTTUsername <span class="hljs-type">string</span> <span class="hljs-string">`json:"mqtt_username,omitempty"`</span>
+    MQTTPassword <span class="hljs-type">string</span> <span class="hljs-string">`json:"mqtt_password,omitempty"`</span>
+
+    <span class="hljs-comment">// Baza podataka</span>
+    PostgresURL <span class="hljs-type">string</span> <span class="hljs-string">`json:"postgres_url,omitempty"`</span>
+
+    <span class="hljs-comment">//HTTP server</span>
+    ServerAddr <span class="hljs-type">string</span> <span class="hljs-string">`json:"server_addr,omitempty"`</span>
+
+    <span class="hljs-comment">// Dashboard login</span>
+    DashboardUser     <span class="hljs-type">string</span> <span class="hljs-string">`json:"dashboard_user,omitempty"`</span>
+    DashboardPass     <span class="hljs-type">string</span> <span class="hljs-string">`json:"-"`</span>
+    DashboardPassHash <span class="hljs-type">string</span> <span class="hljs-string">`json:"-"`</span>
+}
+</code></pre>
+<p><strong>Objašnjenje</strong>:</p>
+<ul>
+<li><code>type Config struct</code> - definira novu strukturu podataka (slično klasi u drugim jezicima)</li>
+<li>Svako polje ima:<ul>
+<li><strong>Ime</strong> (npr. <code>MQTTBroker</code>)</li>
+<li><strong>Tip</strong> (<code>string</code>)</li>
+<li><strong>Tag</strong> (`json:"mqtt_broker,omitempty"`) - metapodaci za serijalizaciju</li>
+</ul>
+</li>
+</ul>
+<h3 id="struct-tags">Struct Tags</h3>
+<ul>
+<li><code>json:"mqtt_broker"</code> - kada se struktura pretvara u JSON, koristi ovo ime</li>
+<li><code>omitempty</code> - izostavi polje ako je prazno</li>
+<li><code>json:"-"</code> - nikad ne uključuj u JSON (za osjetljive podatke)</li>
+</ul>
+<pre><code class="hljs go"><span class="hljs-keyword">var</span> cfg = initConfig()
+</code></pre>
+<p><strong>Objašnjenje</strong>: </p>
+<ul>
+<li><code>var</code> - deklarira varijablu</li>
+<li><code>cfg</code> - ime varijable</li>
+<li><code>= initConfig()</code> - inicijalizira pozivom funkcije</li>
+</ul>
+<p><strong>Bitno</strong>: Ovo se izvršava <strong>pri učitavanju paketa</strong>, prije <code>main()</code> funkcije!</p>
+<pre><code class="hljs go"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">initConfig</span><span class="hljs-params">()</span></span> Config {
+    c := Config{
+        MQTTBroker:   getEnv(<span class="hljs-string">"MQTT_BROKER"</span>, <span class="hljs-string">"tcp://localhost:1883"</span>),
+        MQTTTopic:    getEnv(<span class="hljs-string">"MQTT_TOPIC"</span>, <span class="hljs-string">"edgeai/fault"</span>),
+        <span class="hljs-comment">// ...</span>
+    }
+</code></pre>
+<p><strong>Objašnjenje</strong>:</p>
+<ul>
+<li><code>func initConfig() Config</code> - funkcija koja vraća <code>Config</code> strukturu</li>
+<li><code>c := Config{...}</code> - kreira novu instancu Config-a</li>
+<li><code>:=</code> - kratka deklaracija s inicijalizacijom (Go sam određuje tip)</li>
+<li><code>getEnv("MQTT_BROKER", "tcp://localhost:1883")</code> - dohvati env varijablu ili koristi default</li>
+</ul>
+<pre><code class="hljs go"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">getEnv</span><span class="hljs-params">(key, fallback <span class="hljs-type">string</span>)</span></span> <span class="hljs-type">string</span> {
+    <span class="hljs-keyword">if</span> v := os.Getenv(key); v != <span class="hljs-string">""</span> {
+        <span class="hljs-keyword">return</span> strings.TrimSpace(v)
+    }
+    <span class="hljs-keyword">return</span> fallback
+}
+</code></pre>
+<p><strong>Objašnjenje</strong>:</p>
+<ul>
+<li><code>key, fallback string</code> - dva parametra istog tipa</li>
+<li><code>os.Getenv(key)</code> - dohvaća environment varijablu</li>
+<li><code>strings.TrimSpace(v)</code> - uklanja whitespace s početka i kraja</li>
+<li>Ako varijabla nije postavljena ili je prazna, vraća <code>fallback</code></li>
+</ul>
+<pre><code class="hljs go">    hashFromEnv := os.Getenv(<span class="hljs-string">"DASH_PASS_HASH"</span>)
+    <span class="hljs-keyword">if</span> hashFromEnv != <span class="hljs-string">""</span> {
+        c.DashboardPassHash = hashFromEnv
+        log.Println(<span class="hljs-string">"CONFIG: Using pre-hashed DASH_PASS_HASH from environment"</span>)
+    } <span class="hljs-keyword">else</span> {
+        h, err := bcrypt.GenerateFromPassword([]<span class="hljs-type">byte</span>(c.DashboardPass), bcrypt.DefaultCost)
+        <span class="hljs-keyword">if</span> err != <span class="hljs-literal">nil</span> {
+            <span class="hljs-built_in">panic</span>(<span class="hljs-string">"FATAL: Failed to hash dashboard password: "</span> + err.Error())
+        }
+        c.DashboardPassHash = <span class="hljs-type">string</span>(h)
+    }
+</code></pre>
+<p><strong>Objašnjenje</strong>:</p>
+<ul>
+<li>Provjerava postoji li već hashirana lozinka u env</li>
+<li>Ako ne, hashira plaintext lozinku</li>
+<li><code>bcrypt.GenerateFromPassword([]byte(...), bcrypt.DefaultCost)</code>:<ul>
+<li><code>[]byte(...)</code> - pretvara string u byte slice</li>
+<li><code>bcrypt.DefaultCost</code> - broj iteracija (10)</li>
+</ul>
+</li>
+<li><code>panic(...)</code> - zaustavlja program ako hashiranje ne uspije</li>
+</ul>
+<h3 id="error-handling-u-go-u">Error Handling u Go-u</h3>
+<p>Go nema iznimke (exceptions). Umjesto toga, funkcije vraćaju error kao drugu vrijednost:</p>
+<pre><code class="hljs go">value, err := someFunction()
+<span class="hljs-keyword">if</span> err != <span class="hljs-literal">nil</span> {
+    <span class="hljs-comment">// handle error</span>
+}
+</code></pre>
+<hr>
+<h1 id="📄-datoteka-maingo">📄 DATOTEKA: main.go</h1>
+<pre><code class="hljs go"><span class="hljs-keyword">package</span> main
+
+<span class="hljs-keyword">import</span> (
+    <span class="hljs-string">"log"</span>
+    <span class="hljs-string">"os"</span>
+    <span class="hljs-string">"os/signal"</span>
+    <span class="hljs-string">"syscall"</span>
+    mqtt <span class="hljs-string">"github.com/eclipse/paho.mqtt.golang"</span>
+)
+</code></pre>
+<p><strong>Objašnjenje</strong>:</p>
+<ul>
+<li><code>os/signal</code> - za hvatanje sistemskih signala</li>
+<li><code>syscall</code> - nisko-razinski sistemski pozivi</li>
+<li><code>mqtt "github.com/..."</code> - alias import (koristimo <code>mqtt</code> umjesto punog imena)</li>
+</ul>
+<pre><code class="hljs go"><span class="hljs-keyword">var</span> mqttClient mqtt.Client
+</code></pre>
+<p><strong>Objašnjenje</strong>: Globalna varijabla za MQTT klijent. Potrebna jer je koriste multiple funkcije.</p>
+<h3 id="globalne-varijable---kada-ih-koristiti">Globalne varijable - kada ih koristiti?</h3>
+<p>Općenito ih treba izbjegavati, ali ponekad su nužne za:</p>
+<ul>
+<li>Dijeljene resurse (baza, MQTT klijent)</li>
+<li>Konfiguraciju</li>
+<li>Loggere</li>
+</ul>
+<pre><code class="hljs go"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> {
+    InitDB()
+    <span class="hljs-keyword">defer</span> DB.Close()
+</code></pre>
+<p><strong>Objašnjenje</strong>:</p>
+<ul>
+<li><code>main()</code> - ulazna točka programa</li>
+<li><code>InitDB()</code> - inicijalizira vezu s bazom</li>
+<li><code>defer DB.Close()</code> - <code>defer</code> osigurava da se funkcija izvrši <strong>pri izlasku</strong> iz funkcije</li>
+</ul>
+<h3 id="što-je-defer">Što je Defer?</h3>
+<p><code>defer</code> je Go mehanizam za <strong>odgođeno izvršavanje</strong>. Koristi se za cleanup:</p>
+<pre><code class="hljs go"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">example</span><span class="hljs-params">()</span></span> {
+    file := openFile()
+    <span class="hljs-keyword">defer</span> file.Close()  <span class="hljs-comment">// Izvršit će se kada funkcija završi</span>
+    <span class="hljs-comment">// ... koristi file</span>
+}  <span class="hljs-comment">// Ovdje se poziva file.Close()</span>
+</code></pre>
+<p>Defer se izvršava čak i ako funkcija završi s panik-om!</p>
+<pre><code class="hljs go">    mqttClient = StartMQTT()
+    <span class="hljs-keyword">defer</span> mqttClient.Disconnect(<span class="hljs-number">250</span>)
+</code></pre>
+<p><strong>Objašnjenje</strong>: Pokreće MQTT i planira disconnection pri izlasku. <code>250</code> je timeout u milisekundama.</p>
+<pre><code class="hljs go">    StartStatusBroadcaster()
+</code></pre>
+<p><strong>Objašnjenje</strong>: Pokreće goroutinu koja periodički šalje status svim klijentima.</p>
+<pre><code class="hljs go">    router := SetupRouter()
+    <span class="hljs-keyword">go</span> <span class="hljs-function"><span class="hljs-keyword">func</span><span class="hljs-params">()</span></span> {
+        log.Printf(<span class="hljs-string">"HTTP server running on %s\n"</span>, cfg.ServerAddr)
+        <span class="hljs-keyword">if</span> err := router.Run(cfg.ServerAddr); err != <span class="hljs-literal">nil</span> {
+            log.Fatal(<span class="hljs-string">"HTTP server failed:"</span>, err)
+        }
+    }()
+</code></pre>
+<p><strong>Objašnjenje</strong>:</p>
+<ul>
+<li><code>SetupRouter()</code> - konfigurira HTTP rute</li>
+<li><code>go func() {...}()</code> - pokreće <strong>goroutinu</strong> (konkurentnu izvršnu jedinicu)</li>
+<li><code>router.Run(...)</code> - pokreće HTTP server (blokira)</li>
+</ul>
+<h3 id="što-je-goroutine">Što je Goroutine?</h3>
+<p>Goroutine je <strong>lagana nit</strong> (thread). Go runtime upravlja tisućama goroutina efikasnije nego OS threadovima.</p>
+<pre><code class="hljs go"><span class="hljs-keyword">go</span> <span class="hljs-function"><span class="hljs-keyword">func</span><span class="hljs-params">()</span></span> {
+    <span class="hljs-comment">// Ovaj kod se izvršava paralelno</span>
+}()
+</code></pre>
+<p><code>go</code> keyword pokreće funkciju u novoj goroutini. Bez <code>go</code>, <code>router.Run()</code> bi blokirao i ostatak main funkcije se nikad ne bi izvršio.</p>
+<pre><code class="hljs go">    quit := <span class="hljs-built_in">make</span>(<span class="hljs-keyword">chan</span> os.Signal, <span class="hljs-number">1</span>)
+    signal.Notify(quit, syscall.SIGINT, syscall.SIGTERM)
+    &lt;-quit
+</code></pre>
+<p><strong>Objašnjenje</strong>:</p>
+<ul>
+<li><code>make(chan os.Signal, 1)</code> - kreira <strong>kanal</strong> za signale s bufferom veličine 1</li>
+<li><code>signal.Notify(...)</code> - registrira da želimo primati SIGINT i SIGTERM</li>
+<li><code>&lt;-quit</code> - <strong>blokira</strong> dok ne primi signal</li>
+</ul>
+<h3 id="što-je-channel-kanal">Što je Channel (Kanal)?</h3>
+<p>Channel je Go mehanizam za <strong>komunikaciju između goroutina</strong>. Siguran je za konkurentni pristup.</p>
+<pre><code class="hljs go">ch := <span class="hljs-built_in">make</span>(<span class="hljs-keyword">chan</span> <span class="hljs-type">int</span>)    <span class="hljs-comment">// Kreira kanal za int-ove</span>
+
+<span class="hljs-keyword">go</span> <span class="hljs-function"><span class="hljs-keyword">func</span><span class="hljs-params">()</span></span> {
+    ch &lt;- <span class="hljs-number">42</span>            <span class="hljs-comment">// Šalje vrijednost u kanal</span>
+}()
+
+value := &lt;-ch           <span class="hljs-comment">// Prima vrijednost iz kanala</span>
+</code></pre>
+<h3 id="graceful-shutdown">Graceful Shutdown</h3>
+<pre><code class="hljs go">    signal.Notify(quit, syscall.SIGINT, syscall.SIGTERM)
+    &lt;-quit
+</code></pre>
+<ul>
+<li><code>SIGINT</code> - signal koji se šalje kada pritisnete Ctrl+C</li>
+<li><code>SIGTERM</code> - signal za gašenje (Docker ga šalje pri zaustavljanju)</li>
+</ul>
+<p>Program čeka na jedan od ovih signala, zatim se elegantno gasi (close() na faultChan, defer funkcije se izvršavaju).</p>
+<pre><code class="hljs go">    <span class="hljs-built_in">close</span>(faultChan)
+    log.Println(<span class="hljs-string">"Shutdown complete"</span>)
+}
+</code></pre>
+<p><strong>Objašnjenje</strong>: </p>
+<ul>
+<li><code>close(faultChan)</code> - zatvara kanal, signalizira workerima da prestanu</li>
+<li>Defer funkcije se izvršavaju automatski (DB.Close, mqttClient.Disconnect)</li>
+</ul>
+<hr>
+<h1 id="📄-datoteka-dbgo">📄 DATOTEKA: db.go</h1>
+<pre><code class="hljs go"><span class="hljs-keyword">var</span> DB *pgxpool.Pool
+</code></pre>
+<p><strong>Objašnjenje</strong>: Globalna varijabla za connection pool.</p>
+<h3 id="što-je-connection-pool">Što je Connection Pool?</h3>
+<p>Umjesto otvaranja nove konekcije za svaki upit, pool održava skup <strong>ponovno iskoristivih konekcija</strong>. Prednosti:</p>
+<ul>
+<li>Brže (nema overhead kreiranja konekcije)</li>
+<li>Kontrola resursa (maksimalan broj konekcija)</li>
+<li>Upravljanje životnim ciklusom</li>
+</ul>
+<pre><code class="hljs go"><span class="hljs-keyword">type</span> FaultEvent <span class="hljs-keyword">struct</span> {
+    Timestamp  time.Time <span class="hljs-string">`json:"timestamp"`</span>
+    Abnormal   <span class="hljs-type">float64</span>   <span class="hljs-string">`json:"abnormal"`</span>
+    Normal     <span class="hljs-type">float64</span>   <span class="hljs-string">`json:"normal"`</span>
+    Conclusion <span class="hljs-type">string</span>    <span class="hljs-string">`json:"conclusion"`</span>
+}
+</code></pre>
+<p><strong>Objašnjenje</strong>: Struktura koja predstavlja jedan detektirani kvar. Koristi se i za bazu i za JSON API.</p>
+<pre><code class="hljs go"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">InitDB</span><span class="hljs-params">()</span></span> {
+    <span class="hljs-keyword">var</span> err <span class="hljs-type">error</span>
+    DB, err = pgxpool.New(context.Background(), cfg.PostgresURL)
+    <span class="hljs-keyword">if</span> err != <span class="hljs-literal">nil</span> {
+        log.Fatal(<span class="hljs-string">"DB connection error:"</span>, err)
+    }
+</code></pre>
+<p><strong>Objašnjenje</strong>:</p>
+<ul>
+<li><code>pgxpool.New(...)</code> - kreira novi connection pool</li>
+<li><code>context.Background()</code> - prazan kontekst (bez timeout-a ili cancellation-a)</li>
+</ul>
+<h3 id="što-je-context">Što je Context?</h3>
+<p>Context je Go mehanizam za:</p>
+<ul>
+<li>Timeout/deadline (automatski cancel nakon vremena)</li>
+<li>Cancellation (ručni cancel)</li>
+<li>Proslijeđivanje podataka kroz call stack</li>
+</ul>
+<pre><code class="hljs go">    <span class="hljs-keyword">if</span> err = DB.Ping(context.Background()); err != <span class="hljs-literal">nil</span> {
+        log.Fatal(<span class="hljs-string">"DB ping error:"</span>, err)
+    }
+</code></pre>
+<p><strong>Objašnjenje</strong>: Testira konekciju. Ako ne radi, program se zaustavlja.</p>
+<pre><code class="hljs go"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">InsertFaultEvent</span><span class="hljs-params">(abnormal, normal <span class="hljs-type">float64</span>)</span></span> {
+    <span class="hljs-keyword">if</span> abnormal &lt; <span class="hljs-number">0</span> || normal &lt; <span class="hljs-number">0</span> {
+        log.Println(<span class="hljs-string">"Invalid values for DB insert"</span>)
+        <span class="hljs-keyword">return</span>
+    }
+</code></pre>
+<p><strong>Objašnjenje</strong>: Validacija - ne sprema negativne vrijednosti.</p>
+<pre><code class="hljs go">    ctx, cancel := context.WithTimeout(context.Background(), <span class="hljs-number">5</span>*time.Second)
+    <span class="hljs-keyword">defer</span> cancel()
+</code></pre>
+<p><strong>Objašnjenje</strong>:</p>
+<ul>
+<li><code>context.WithTimeout(...)</code> - kreira kontekst s timeout-om od 5 sekundi</li>
+<li><code>defer cancel()</code> - <strong>BITNO</strong>: uvijek pozovi cancel da oslobodiš resurse</li>
+</ul>
+<pre><code class="hljs go">    _, err := DB.Exec(ctx,
+        <span class="hljs-string">`INSERT INTO fault_events (abnormal, normal, conclusion)
+         VALUES ($1, $2, 'KVAR')`</span>,
+        abnormal, normal,
+    )
+</code></pre>
+<p><strong>Objašnjenje</strong>:</p>
+<ul>
+<li><code>DB.Exec(...)</code> - izvršava SQL bez vraćanja rezultata</li>
+<li><code>$1, $2</code> - <strong>parameterized query</strong> - sprječava SQL injection</li>
+<li><code>abnormal, normal</code> - vrijednosti koje zamjenjuju $1 i $2</li>
+</ul>
+<h3 id="sql-injection">SQL Injection</h3>
+<p>Bez parametara:</p>
+<pre><code class="hljs sql"><span class="hljs-comment">-- Napadač unese: '; DROP TABLE users; --</span>
+query <span class="hljs-operator">=</span> "SELECT * FROM users WHERE name = '" <span class="hljs-operator">+</span> userInput <span class="hljs-operator">+</span> "'"
+<span class="hljs-comment">-- Rezultat: SELECT * FROM users WHERE name = ''; DROP TABLE users; --</span>
+</code></pre>
+<p>S parametrima:</p>
+<pre><code class="hljs sql"><span class="hljs-comment">-- Sigurno! Ulaz se tretira kao podatak, ne kao kod</span>
+query <span class="hljs-operator">=</span> "SELECT * FROM users WHERE name = $1"
+</code></pre>
+<pre><code class="hljs go"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">GetFaultEvents</span><span class="hljs-params">()</span></span> []FaultEvent {
+    ctx, cancel := context.WithTimeout(context.Background(), <span class="hljs-number">5</span>*time.Second)
+    <span class="hljs-keyword">defer</span> cancel()
+
+    rows, err := DB.Query(ctx,
+        <span class="hljs-string">`SELECT timestamp, abnormal, normal, conclusion
+         FROM fault_events
+         ORDER BY timestamp DESC
+         LIMIT 50`</span>)
+</code></pre>
+<p><strong>Objašnjenje</strong>:</p>
+<ul>
+<li><code>DB.Query(...)</code> - vraća više redaka</li>
+<li><code>ORDER BY timestamp DESC</code> - najnoviji prvi</li>
+<li><code>LIMIT 50</code> - maksimalno 50 rezultata (za performance)</li>
+</ul>
+<pre><code class="hljs go">    <span class="hljs-keyword">if</span> err != <span class="hljs-literal">nil</span> {
+        log.Println(<span class="hljs-string">"DB query error:"</span>, err)
+        <span class="hljs-keyword">return</span> []FaultEvent{}
+    }
+    <span class="hljs-keyword">defer</span> rows.Close()
+</code></pre>
+<p><strong>Objašnjenje</strong>:</p>
+<ul>
+<li>Ako dođe do greške, vraća prazan slice (graceful degradation)</li>
+<li><code>defer rows.Close()</code> - <strong>KRITIČNO</strong> - mora se zvati da oslobodi resurse</li>
+</ul>
+<h3 id="graceful-degradation">Graceful Degradation</h3>
+<p>Umjesto da aplikacija crashira, vraća prazan rezultat. Korisnik dobije praznu listu umjesto error stranice.</p>
+<pre><code class="hljs go">    events := <span class="hljs-built_in">make</span>([]FaultEvent, <span class="hljs-number">0</span>)
+    <span class="hljs-keyword">for</span> rows.Next() {
+        <span class="hljs-keyword">var</span> e FaultEvent
+        <span class="hljs-keyword">if</span> err := rows.Scan(&amp;e.Timestamp, &amp;e.Abnormal, &amp;e.Normal, &amp;e.Conclusion); err != <span class="hljs-literal">nil</span> {
+            log.Println(<span class="hljs-string">"DB scan error:"</span>, err)
+            <span class="hljs-keyword">continue</span>
+        }
+        events = <span class="hljs-built_in">append</span>(events, e)
+    }
+    <span class="hljs-keyword">return</span> events
+}
+</code></pre>
+<p><strong>Objašnjenje</strong>:</p>
+<ul>
+<li><code>make([]FaultEvent, 0)</code> - kreira prazan slice</li>
+<li><code>rows.Next()</code> - pomakne se na sljedeći red, vraća <code>false</code> kad više nema</li>
+<li><code>rows.Scan(&amp;...)</code> - popunjava varijable iz trenutnog reda</li>
+<li><code>&amp;</code> - pointer (adresa varijable) - Scan treba pointer da bi mogao zapisati vrijednost</li>
+<li><code>append(events, e)</code> - dodaje element na kraj slice-a</li>
+</ul>
+<h3 id="što-je-slice">Što je Slice?</h3>
+<p>Slice je Go-ov dinamički niz. Za razliku od arraya, može rasti:</p>
+<pre><code class="hljs go">s := <span class="hljs-built_in">make</span>([]<span class="hljs-type">int</span>, <span class="hljs-number">0</span>)     <span class="hljs-comment">// Prazan slice</span>
+s = <span class="hljs-built_in">append</span>(s, <span class="hljs-number">1</span>)        <span class="hljs-comment">// [1]</span>
+s = <span class="hljs-built_in">append</span>(s, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>)     <span class="hljs-comment">// [1, 2, 3]</span>
+</code></pre>
+<hr>
+<h1 id="📄-datoteka-mqttgo">📄 DATOTEKA: mqtt.go</h1>
+<pre><code class="hljs go"><span class="hljs-keyword">var</span> faultChan = <span class="hljs-built_in">make</span>(<span class="hljs-keyword">chan</span> FaultPayload, <span class="hljs-number">100</span>)
+</code></pre>
+<p><strong>Objašnjenje</strong>: </p>
+<ul>
+<li>Kanal za proslijeđivanje podataka s MQTT-a na obradu</li>
+<li>Buffer od 100 poruka - ako se napuni, nove se preskaču</li>
+</ul>
+<h3 id="buffered-vs-unbuffered-channels">Buffered vs Unbuffered Channels</h3>
+<pre><code class="hljs go">ch1 := <span class="hljs-built_in">make</span>(<span class="hljs-keyword">chan</span> <span class="hljs-type">int</span>)      <span class="hljs-comment">// Unbuffered - send blokira dok netko ne primi</span>
+ch2 := <span class="hljs-built_in">make</span>(<span class="hljs-keyword">chan</span> <span class="hljs-type">int</span>, <span class="hljs-number">10</span>)  <span class="hljs-comment">// Buffered - može držati 10 poruka</span>
+</code></pre>
+<pre><code class="hljs go"><span class="hljs-keyword">type</span> FaultPayload <span class="hljs-keyword">struct</span> {
+    Abnormal   <span class="hljs-type">float64</span> <span class="hljs-string">`json:"abnormal"`</span>
+    Normal     <span class="hljs-type">float64</span> <span class="hljs-string">`json:"normal"`</span>
+    Conclusion <span class="hljs-type">string</span>  <span class="hljs-string">`json:"conclusion"`</span>
+}
+</code></pre>
+<p><strong>Objašnjenje</strong>: Struktura JSON poruke koju šalje mikrokontroler.</p>
+<pre><code class="hljs go"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">faultWorker</span><span class="hljs-params">()</span></span> {
+    <span class="hljs-keyword">for</span> payload := <span class="hljs-keyword">range</span> faultChan {
+</code></pre>
+<p><strong>Objašnjenje</strong>:</p>
+<ul>
+<li><code>for ... := range faultChan</code> - beskonačna petlja koja prima iz kanala</li>
+<li>Automatski prestaje kada se kanal zatvori (<code>close(faultChan)</code>)</li>
+</ul>
+<pre><code class="hljs go">        <span class="hljs-keyword">if</span> payload.Conclusion != <span class="hljs-string">"KVAR"</span> {
+            <span class="hljs-keyword">continue</span>
+        }
+</code></pre>
+<p><strong>Objašnjenje</strong>: Filtrira - samo kvarove šalje dalje. <code>continue</code> preskače ostatak iteracije.</p>
+<pre><code class="hljs go">        InsertFaultEvent(payload.Abnormal, payload.Normal)
+        event := FaultEvent{
+            Timestamp:  time.Now(),
+            Abnormal:   payload.Abnormal,
+            Normal:     payload.Normal,
+            Conclusion: payload.Conclusion,
+        }
+        BroadcastFault(event)
+    }
+}
+</code></pre>
+<p><strong>Objašnjenje</strong>:</p>
+<ol>
+<li>Sprema u bazu</li>
+<li>Kreira <code>FaultEvent</code> s trenutnim vremenom</li>
+<li>Šalje na WebSocket broadcast</li>
+</ol>
+<pre><code class="hljs go"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">StartMQTT</span><span class="hljs-params">()</span></span> mqtt.Client {
+    <span class="hljs-keyword">go</span> faultWorker()
+</code></pre>
+<p><strong>Objašnjenje</strong>: Pokreće worker goroutinu u pozadini.</p>
+<pre><code class="hljs go">    opts := mqtt.NewClientOptions()
+    opts.AddBroker(cfg.MQTTBroker)
+    opts.SetClientID(cfg.MQTTClient)
+</code></pre>
+<p><strong>Objašnjenje</strong>: </p>
+<ul>
+<li><code>NewClientOptions()</code> - kreira options objekt</li>
+<li>Builder pattern - svaka metoda vraća isti objekt za chain-anje</li>
+</ul>
+<pre><code class="hljs go">    <span class="hljs-keyword">if</span> cfg.MQTTUsername != <span class="hljs-string">""</span> &amp;&amp; cfg.MQTTPassword != <span class="hljs-string">""</span> {
+        opts.SetUsername(cfg.MQTTUsername)
+        opts.SetPassword(cfg.MQTTPassword)
+    }
+    client := mqtt.NewClient(opts)
+</code></pre>
+<p><strong>Objašnjenje</strong>: Postavlja autentifikaciju ako je konfigurirana.</p>
+<pre><code class="hljs go">    <span class="hljs-keyword">if</span> token := client.Connect(); token.Wait() &amp;&amp; token.Error() != <span class="hljs-literal">nil</span> {
+        log.Fatal(<span class="hljs-string">"MQTT connection error:"</span>, token.Error())
+    }
+</code></pre>
+<p><strong>Objašnjenje</strong>:</p>
+<ul>
+<li><code>client.Connect()</code> - vraća Token (async operacija)</li>
+<li><code>token.Wait()</code> - blokira dok ne završi</li>
+<li><code>token.Error()</code> - vraća grešku ako je bilo</li>
+</ul>
+<h3 id="mqtt-token-pattern">MQTT Token Pattern</h3>
+<p>MQTT klijent koristi async operacije. Token predstavlja "obećanje" rezultata:</p>
+<pre><code class="hljs go">token := client.Connect()
+token.Wait()        <span class="hljs-comment">// Čekaj završetak</span>
+<span class="hljs-keyword">if</span> token.Error() != <span class="hljs-literal">nil</span> {
+    <span class="hljs-comment">// Greška</span>
+}
+</code></pre>
+<pre><code class="hljs go">    client.Subscribe(cfg.MQTTTopic, <span class="hljs-number">0</span>, <span class="hljs-function"><span class="hljs-keyword">func</span><span class="hljs-params">(c mqtt.Client, msg mqtt.Message)</span></span> {
+        <span class="hljs-keyword">var</span> payload FaultPayload
+        <span class="hljs-keyword">if</span> err := json.Unmarshal(msg.Payload(), &amp;payload); err != <span class="hljs-literal">nil</span> {
+            log.Println(<span class="hljs-string">"MQTT JSON error:"</span>, err)
+            <span class="hljs-keyword">return</span>
+        }
+</code></pre>
+<p><strong>Objašnjenje</strong>:</p>
+<ul>
+<li><code>Subscribe(topic, qos, callback)</code> - pretplata na topic</li>
+<li>QoS 0 - "fire and forget" (bez potvrde primitka)</li>
+<li>Callback funkcija se poziva za svaku primljenu poruku</li>
+<li><code>json.Unmarshal(...)</code> - pretvara JSON u Go strukturu</li>
+</ul>
+<h3 id="mqtt-qos-quality-of-service">MQTT QoS (Quality of Service)</h3>
+<ul>
+<li><strong>QoS 0</strong>: Poruka se šalje jednom, bez potvrde. Može se izgubiti.</li>
+<li><strong>QoS 1</strong>: Poruka se šalje dok se ne potvrdi. Može doći duplicirano.</li>
+<li><strong>QoS 2</strong>: Poruka se isporučuje točno jednom. Najsporije.</li>
+</ul>
+<pre><code class="hljs go">        <span class="hljs-keyword">select</span> {
+        <span class="hljs-keyword">case</span> faultChan &lt;- payload:
+            <span class="hljs-comment">// Normalan flow</span>
+        <span class="hljs-keyword">default</span>:
+            log.Println(<span class="hljs-string">"Warning: faultChan buffer full, skipped MQTT message"</span>)
+        }
+    })
+    <span class="hljs-keyword">return</span> client
+}
+</code></pre>
+<p><strong>Objašnjenje</strong>:</p>
+<ul>
+<li><code>select</code> - slično switch-u, ali za kanale</li>
+<li><code>case faultChan &lt;- payload:</code> - pokušaj slanja u kanal</li>
+<li><code>default:</code> - izvršava se ako kanal blokira (buffer pun)</li>
+</ul>
+<h3 id="select-statement">Select Statement</h3>
+<p>Select čeka na više operacija s kanalima:</p>
+<pre><code class="hljs go"><span class="hljs-keyword">select</span> {
+<span class="hljs-keyword">case</span> msg := &lt;-ch1:
+    <span class="hljs-comment">// Primljeno iz ch1</span>
+<span class="hljs-keyword">case</span> ch2 &lt;- value:
+    <span class="hljs-comment">// Poslano u ch2</span>
+<span class="hljs-keyword">case</span> &lt;-time.After(<span class="hljs-number">5</span> * time.Second):
+    <span class="hljs-comment">// Timeout nakon 5 sekundi</span>
+<span class="hljs-keyword">default</span>:
+    <span class="hljs-comment">// Ako sve blokira, izvrši default</span>
+}
+</code></pre>
+<hr>
+<h1 id="📄-datoteka-websocketgo">📄 DATOTEKA: websocket.go</h1>
+<h3 id="što-je-websocket">Što je WebSocket?</h3>
+<p>WebSocket je protokol za <strong>dvosmjernu komunikaciju</strong> između browsera i servera. Za razliku od HTTP-a (request-response), WebSocket održava otvorenu vezu.</p>
+<pre><code>HTTP:
+Client: "Ima li novih podataka?" → Server: "Da, evo."
+Client: "Ima li novih podataka?" → Server: "Ne."
+Client: "Ima li novih podataka?" → Server: "Da, evo."
+
+WebSocket:
+Client: "Otvori vezu" → Server: "OK"
+                      ← Server: "Novi podaci!"
+                      ← Server: "Još podataka!"
+                      ← Server: "Opet novi!"
+</code></pre>
+<pre><code class="hljs go"><span class="hljs-keyword">var</span> upgrader = websocket.Upgrader{
+    CheckOrigin: <span class="hljs-function"><span class="hljs-keyword">func</span><span class="hljs-params">(r *http.Request)</span></span> <span class="hljs-type">bool</span> {
+        <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>
+    },
+}
+</code></pre>
+<p><strong>Objašnjenje</strong>:</p>
+<ul>
+<li><code>Upgrader</code> - pretvara HTTP konekciju u WebSocket</li>
+<li><code>CheckOrigin</code> - sigurnosna provjera origin-a</li>
+<li><code>return true</code> - prihvaća sve origini (u produkciji provjeriti!)</li>
+</ul>
+<h3 id="cors-cross-origin-resource-sharing">CORS (Cross-Origin Resource Sharing)</h3>
+<p>Browser sprječava JavaScript da šalje zahtjeve na druge domene osim ako server to eksplicitno dozvoli. <code>CheckOrigin</code> kontrolira tko se smije spojiti.</p>
+<pre><code class="hljs go"><span class="hljs-keyword">var</span> (
+    wsClients = <span class="hljs-built_in">make</span>(<span class="hljs-keyword">map</span>[*websocket.Conn]<span class="hljs-type">bool</span>)
+    wsMutex   sync.Mutex
+)
+</code></pre>
+<p><strong>Objašnjenje</strong>:</p>
+<ul>
+<li><code>wsClients</code> - mapa aktivnih WebSocket konekcija</li>
+<li><code>wsMutex</code> - mutex za thread-safe pristup mapi</li>
+</ul>
+<h3 id="što-je-mutex">Što je Mutex?</h3>
+<p>Mutex (Mutual Exclusion) osigurava da samo jedna goroutina pristupa resursu istovremeno:</p>
+<pre><code class="hljs go"><span class="hljs-keyword">var</span> counter <span class="hljs-type">int</span>
+<span class="hljs-keyword">var</span> mu sync.Mutex
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">increment</span><span class="hljs-params">()</span></span> {
+    mu.Lock()       <span class="hljs-comment">// Zaključaj</span>
+    counter++       <span class="hljs-comment">// Sigurna operacija</span>
+    mu.Unlock()     <span class="hljs-comment">// Otključaj</span>
+}
+</code></pre>
+<p>Bez mutexa, dvije goroutine bi mogle čitati/pisati counter istovremeno i dobiti pogrešan rezultat.</p>
+<pre><code class="hljs go"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">cleanupClient</span><span class="hljs-params">(conn *websocket.Conn)</span></span> {
+    wsMutex.Lock()
+    <span class="hljs-keyword">defer</span> wsMutex.Unlock()
+
+    <span class="hljs-keyword">if</span> _, ok := wsClients[conn]; ok {
+        conn.Close()
+        <span class="hljs-built_in">delete</span>(wsClients, conn)
+        log.Println(<span class="hljs-string">"WebSocket client disconnected"</span>)
+    }
+}
+</code></pre>
+<p><strong>Objašnjenje</strong>:</p>
+<ul>
+<li>Zaključava mutex za sigurno brisanje</li>
+<li><code>if _, ok := wsClients[conn]; ok</code> - provjera postoji li ključ u mapi</li>
+<li><code>delete(wsClients, conn)</code> - briše iz mape</li>
+</ul>
+<h3 id="map-lookup-pattern">Map Lookup Pattern</h3>
+<pre><code class="hljs go">value, ok := myMap[key]
+<span class="hljs-keyword">if</span> ok {
+    <span class="hljs-comment">// key postoji, value sadrži vrijednost</span>
+} <span class="hljs-keyword">else</span> {
+    <span class="hljs-comment">// key ne postoji</span>
+}
+</code></pre>
+<pre><code class="hljs go"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">broadcastMessage</span><span class="hljs-params">(msgType <span class="hljs-type">string</span>, data <span class="hljs-keyword">interface</span>{})</span></span> {
+    msg, err := json.Marshal(<span class="hljs-keyword">map</span>[<span class="hljs-type">string</span>]<span class="hljs-keyword">interface</span>{}{
+        <span class="hljs-string">"type"</span>: msgType,
+        <span class="hljs-string">"data"</span>: data,
+    })
+</code></pre>
+<p><strong>Objašnjenje</strong>:</p>
+<ul>
+<li><code>interface{}</code> - Go-ov "any" tip, može držati bilo što</li>
+<li><code>json.Marshal(...)</code> - pretvara Go strukturu u JSON bytes</li>
+<li>Kreira mapu s poljima <code>type</code> i <code>data</code></li>
+</ul>
+<pre><code class="hljs go">    wsMutex.Lock()
+    <span class="hljs-keyword">defer</span> wsMutex.Unlock()
+    <span class="hljs-keyword">for</span> conn := <span class="hljs-keyword">range</span> wsClients {
+        <span class="hljs-keyword">if</span> err := conn.WriteMessage(websocket.TextMessage, msg); err != <span class="hljs-literal">nil</span> {
+            conn.Close()
+            <span class="hljs-built_in">delete</span>(wsClients, conn)
+        }
+    }
+}
+</code></pre>
+<p><strong>Objašnjenje</strong>:</p>
+<ul>
+<li>Iterira kroz sve klijente</li>
+<li><code>WriteMessage(...)</code> - šalje poruku</li>
+<li>Ako slanje ne uspije, zatvara i briše konekciju</li>
+</ul>
+<pre><code class="hljs go"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">WebSocketHandler</span><span class="hljs-params">(c *gin.Context)</span></span> {
+    conn, err := upgrader.Upgrade(c.Writer, c.Request, <span class="hljs-literal">nil</span>)
+    <span class="hljs-keyword">if</span> err != <span class="hljs-literal">nil</span> {
+        log.Println(<span class="hljs-string">"WebSocket upgrade error:"</span>, err)
+        <span class="hljs-keyword">return</span>
+    }
+</code></pre>
+<p><strong>Objašnjenje</strong>:</p>
+<ul>
+<li><code>Upgrade(...)</code> - pretvara HTTP u WebSocket</li>
+<li><code>c.Writer, c.Request</code> - HTTP response writer i request iz Gin contexta</li>
+</ul>
+<pre><code class="hljs go">    wsMutex.Lock()
+    wsClients[conn] = <span class="hljs-literal">true</span>
+    wsMutex.Unlock()
+</code></pre>
+<p><strong>Objašnjenje</strong>: Dodaje klijenta u mapu (mutex za sigurnost).</p>
+<pre><code class="hljs go">    <span class="hljs-keyword">defer</span> cleanupClient(conn)
+</code></pre>
+<p><strong>Objašnjenje</strong>: Osigurava cleanup kada funkcija završi.</p>
+<pre><code class="hljs go">    conn.SetReadDeadline(time.Now().Add(<span class="hljs-number">60</span> * time.Second))
+    conn.SetPongHandler(<span class="hljs-function"><span class="hljs-keyword">func</span><span class="hljs-params">(<span class="hljs-type">string</span>)</span></span> <span class="hljs-type">error</span> {
+        conn.SetReadDeadline(time.Now().Add(<span class="hljs-number">60</span> * time.Second))
+        <span class="hljs-keyword">return</span> <span class="hljs-literal">nil</span>
+    })
+</code></pre>
+<p><strong>Objašnjenje</strong>:</p>
+<ul>
+<li><code>SetReadDeadline(...)</code> - timeout za čitanje (60 sekundi)</li>
+<li><code>PongHandler</code> - kada primi "pong", resetira timeout</li>
+</ul>
+<h3 id="pingpong-heartbeat">Ping/Pong (Heartbeat)</h3>
+<p>WebSocket koristi ping/pong za provjeru je li veza još živa:</p>
+<ol>
+<li>Server šalje PING</li>
+<li>Klijent automatski odgovara PONG</li>
+<li>Ako nema PONG-a, veza je mrtva</li>
+</ol>
+<pre><code class="hljs go">    pingTicker := time.NewTicker(<span class="hljs-number">30</span> * time.Second)
+    <span class="hljs-keyword">defer</span> pingTicker.Stop()
+</code></pre>
+<p><strong>Objašnjenje</strong>: </p>
+<ul>
+<li><code>Ticker</code> šalje signal svakih 30 sekundi</li>
+<li><code>defer Stop()</code> - zaustavlja ticker pri izlasku</li>
+</ul>
+<pre><code class="hljs go">    <span class="hljs-keyword">go</span> <span class="hljs-function"><span class="hljs-keyword">func</span><span class="hljs-params">()</span></span> {
+        <span class="hljs-keyword">for</span> {
+            _, _, err := conn.ReadMessage()
+            <span class="hljs-keyword">if</span> err != <span class="hljs-literal">nil</span> {
+                <span class="hljs-keyword">return</span>
+            }
+        }
+    }()
+</code></pre>
+<p><strong>Objašnjenje</strong>: </p>
+<ul>
+<li>Goroutina koja čita poruke</li>
+<li><strong>Mora postojati</strong> - WebSocket zahtijeva da netko čita, inače browser prekida vezu</li>
+<li>Poruke se ignoriraju (samo klijent-&gt;server poruke)</li>
+</ul>
+<pre><code class="hljs go">    <span class="hljs-keyword">for</span> <span class="hljs-keyword">range</span> pingTicker.C {
+        <span class="hljs-keyword">if</span> err := conn.WriteMessage(websocket.PingMessage, <span class="hljs-literal">nil</span>); err != <span class="hljs-literal">nil</span> {
+            <span class="hljs-keyword">return</span>
+        }
+    }
+}
+</code></pre>
+<p><strong>Objašnjenje</strong>:</p>
+<ul>
+<li><code>pingTicker.C</code> - kanal koji prima tick svakih 30 sekundi</li>
+<li>Šalje PING poruku</li>
+<li>Ako ne uspije, izlazi iz funkcije (cleanup se izvršava)</li>
+</ul>
+<pre><code class="hljs go"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">BroadcastFault</span><span class="hljs-params">(event FaultEvent)</span></span> {
+    broadcastMessage(<span class="hljs-string">"NEW_FAULT"</span>, event)
+}
+</code></pre>
+<p><strong>Objašnjenje</strong>: Jednostavna wrapper funkcija za broadcast kvara.</p>
+<pre><code class="hljs go"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">BroadcastStatus</span><span class="hljs-params">()</span></span> {
+    status := <span class="hljs-keyword">map</span>[<span class="hljs-type">string</span>]<span class="hljs-type">string</span>{
+        <span class="hljs-string">"mqtt"</span>: <span class="hljs-string">"NOT CONNECTED"</span>,
+        <span class="hljs-string">"db"</span>:   <span class="hljs-string">"ERROR"</span>,
+    }
+    <span class="hljs-keyword">if</span> err := DB.Ping(context.Background()); err == <span class="hljs-literal">nil</span> {
+        status[<span class="hljs-string">"db"</span>] = <span class="hljs-string">"OK"</span>
+    }
+    <span class="hljs-keyword">if</span> mqttClient != <span class="hljs-literal">nil</span> &amp;&amp; mqttClient.IsConnected() {
+        status[<span class="hljs-string">"mqtt"</span>] = <span class="hljs-string">"CONNECTED"</span>
+    }
+    broadcastMessage(<span class="hljs-string">"STATUS"</span>, status)
+}
+</code></pre>
+<p><strong>Objašnjenje</strong>: Provjerava status servisa i broadcast-a svim klijentima.</p>
+<pre><code class="hljs go"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">StartStatusBroadcaster</span><span class="hljs-params">()</span></span> {
+    <span class="hljs-keyword">go</span> <span class="hljs-function"><span class="hljs-keyword">func</span><span class="hljs-params">()</span></span> {
+        ticker := time.NewTicker(<span class="hljs-number">2</span> * time.Second)
+        <span class="hljs-keyword">defer</span> ticker.Stop()
+        <span class="hljs-keyword">for</span> <span class="hljs-keyword">range</span> ticker.C {
+            BroadcastStatus()
+        }
+    }()
+}
+</code></pre>
+<p><strong>Objašnjenje</strong>: Pokreće goroutinu koja šalje status svakih 2 sekunde.</p>
+<hr>
+<h1 id="📄-datoteka-apigo">📄 DATOTEKA: api.go</h1>
+<pre><code class="hljs go"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">BcryptAuthMiddleware</span><span class="hljs-params">()</span></span> gin.HandlerFunc {
+    <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">func</span><span class="hljs-params">(c *gin.Context)</span></span> {
+</code></pre>
+<p><strong>Objašnjenje</strong>: </p>
+<ul>
+<li><strong>Middleware</strong> je funkcija koja se izvršava prije/poslije handlera</li>
+<li><code>gin.HandlerFunc</code> - tip funkcije koju Gin očekuje</li>
+<li>Vraća closure (funkciju unutar funkcije)</li>
+</ul>
+<h3 id="što-je-middleware">Što je Middleware?</h3>
+<p>Middleware je kao "filter" za HTTP zahtjeve:</p>
+<pre><code>Request → [Auth Middleware] → [Logging Middleware] → [Handler] → Response
+</code></pre>
+<pre><code class="hljs go">        auth := c.GetHeader(<span class="hljs-string">"Authorization"</span>)
+        <span class="hljs-keyword">if</span> auth == <span class="hljs-string">""</span> || !strings.HasPrefix(auth, <span class="hljs-string">"Basic "</span>) {
+            c.Header(<span class="hljs-string">"WWW-Authenticate"</span>, <span class="hljs-string">`Basic realm="Restricted"`</span>)
+            c.AbortWithStatus(<span class="hljs-number">401</span>)
+            <span class="hljs-keyword">return</span>
+        }
+</code></pre>
+<p><strong>Objašnjenje</strong>:</p>
+<ul>
+<li>Dohvaća Authorization header</li>
+<li>Provjerava počinje li s "Basic "</li>
+<li>Ako ne, vraća 401 Unauthorized</li>
+<li><code>WWW-Authenticate</code> header govori browseru da prikaže login popup</li>
+</ul>
+<h3 id="http-basic-authentication">HTTP Basic Authentication</h3>
+<pre><code>Authorization: Basic base64(username:password)
+
+Primjer:
+username: admin
+password: admin123
+base64("admin:admin123") = "YWRtaW46YWRtaW4xMjM="
+
+Header: Authorization: Basic YWRtaW46YWRtaW4xMjM=
+</code></pre>
+<pre><code class="hljs go">        payload, err := base64.StdEncoding.DecodeString(auth[<span class="hljs-built_in">len</span>(<span class="hljs-string">"Basic "</span>):])
+        <span class="hljs-keyword">if</span> err != <span class="hljs-literal">nil</span> {
+            c.AbortWithStatus(<span class="hljs-number">401</span>)
+            <span class="hljs-keyword">return</span>
+        }
+</code></pre>
+<p><strong>Objašnjenje</strong>:</p>
+<ul>
+<li><code>auth[len("Basic "):]</code> - uzima string nakon "Basic "</li>
+<li><code>DecodeString(...)</code> - dekodira Base64</li>
+</ul>
+<pre><code class="hljs go">        parts := strings.SplitN(<span class="hljs-type">string</span>(payload), <span class="hljs-string">":"</span>, <span class="hljs-number">2</span>)
+        <span class="hljs-keyword">if</span> <span class="hljs-built_in">len</span>(parts) != <span class="hljs-number">2</span> {
+            c.AbortWithStatus(<span class="hljs-number">401</span>)
+            <span class="hljs-keyword">return</span>
+        }
+        username, password := parts[<span class="hljs-number">0</span>], parts[<span class="hljs-number">1</span>]
+</code></pre>
+<p><strong>Objašnjenje</strong>:</p>
+<ul>
+<li><code>SplitN(..., ":", 2)</code> - dijeli po ":", maksimalno 2 dijela</li>
+<li>Izvlači username i password</li>
+</ul>
+<pre><code class="hljs go">        <span class="hljs-keyword">if</span> username != cfg.DashboardUser {
+            c.AbortWithStatus(<span class="hljs-number">401</span>)
+            <span class="hljs-keyword">return</span>
+        }
+        <span class="hljs-keyword">if</span> bcrypt.CompareHashAndPassword([]<span class="hljs-type">byte</span>(cfg.DashboardPassHash), []<span class="hljs-type">byte</span>(password)) != <span class="hljs-literal">nil</span> {
+            c.AbortWithStatus(<span class="hljs-number">401</span>)
+            <span class="hljs-keyword">return</span>
+        }
+        c.Next()
+    }
+}
+</code></pre>
+<p><strong>Objašnjenje</strong>:</p>
+<ul>
+<li>Provjerava username</li>
+<li><code>CompareHashAndPassword(...)</code> - uspoređuje hash s lozinkom (sigurno, constant-time)</li>
+<li><code>c.Next()</code> - nastavlja s obradom zahtjeva</li>
+</ul>
+<pre><code class="hljs go"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">SetupRouter</span><span class="hljs-params">()</span></span> *gin.Engine {
+    r := gin.Default()
+</code></pre>
+<p><strong>Objašnjenje</strong>: </p>
+<ul>
+<li><code>gin.Default()</code> - kreira router s default middleware-om (logger, recovery)</li>
+<li>Recovery middleware hvata panic i vraća 500 umjesto da crashira server</li>
+</ul>
+<pre><code class="hljs go">    r.LoadHTMLGlob(<span class="hljs-string">"templates/*"</span>)
+    r.Static(<span class="hljs-string">"/static"</span>, <span class="hljs-string">"./static"</span>)
+</code></pre>
+<p><strong>Objašnjenje</strong>:</p>
+<ul>
+<li><code>LoadHTMLGlob(...)</code> - učitava HTML template-e</li>
+<li><code>Static(...)</code> - servira statičke datoteke</li>
+</ul>
+<pre><code class="hljs go">    authorized := r.Group(<span class="hljs-string">"/"</span>, BcryptAuthMiddleware())
+    authorized.GET(<span class="hljs-string">"/"</span>, <span class="hljs-function"><span class="hljs-keyword">func</span><span class="hljs-params">(c *gin.Context)</span></span> {
+        c.HTML(http.StatusOK, <span class="hljs-string">"index.html"</span>, <span class="hljs-literal">nil</span>)
+    })
+</code></pre>
+<p><strong>Objašnjenje</strong>:</p>
+<ul>
+<li><code>r.Group(...)</code> - kreira grupu ruta s zajedničkim middleware-om</li>
+<li>Sve rute u grupi zahtijevaju autentifikaciju</li>
+<li><code>c.HTML(...)</code> - renderira HTML template</li>
+</ul>
+<pre><code class="hljs go">    r.GET(<span class="hljs-string">"/api/faults"</span>, <span class="hljs-function"><span class="hljs-keyword">func</span><span class="hljs-params">(c *gin.Context)</span></span> {
+        c.JSON(http.StatusOK, GetFaultEvents())
+    })
+    r.GET(<span class="hljs-string">"/ws"</span>, WebSocketHandler)
+    <span class="hljs-keyword">return</span> r
+}
+</code></pre>
+<p><strong>Objašnjenje</strong>:</p>
+<ul>
+<li><code>/api/faults</code> - REST API endpoint (bez auth - za inicijalno učitavanje)</li>
+<li><code>/ws</code> - WebSocket endpoint (bez auth - za real-time)</li>
+<li><code>c.JSON(...)</code> - vraća JSON response</li>
+</ul>
+<hr>
+<h1 id="📄-datoteka-setupsql">📄 DATOTEKA: setup.sql</h1>
+<pre><code class="hljs sql"><span class="hljs-keyword">CREATE</span> EXTENSION IF <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">EXISTS</span> timescaledb CASCADE;
+</code></pre>
+<p><strong>Objašnjenje</strong>: </p>
+<ul>
+<li>Aktivira TimescaleDB ekstenziju</li>
+<li><code>IF NOT EXISTS</code> - ne javlja grešku ako već postoji</li>
+<li><code>CASCADE</code> - automatski instalira dependencies</li>
+</ul>
+<pre><code class="hljs sql"><span class="hljs-keyword">CREATE TABLE</span> IF <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">EXISTS</span> sensor_data (
+    <span class="hljs-type">timestamp</span> TIMESTAMPTZ <span class="hljs-keyword">NOT NULL</span> <span class="hljs-keyword">DEFAULT</span> NOW(),
+    x <span class="hljs-type">DOUBLE PRECISION</span> <span class="hljs-keyword">NOT NULL</span>,
+    y <span class="hljs-type">DOUBLE PRECISION</span> <span class="hljs-keyword">NOT NULL</span>,
+    z <span class="hljs-type">DOUBLE PRECISION</span> <span class="hljs-keyword">NOT NULL</span>,
+    abnormal <span class="hljs-type">DOUBLE PRECISION</span>,
+    normal <span class="hljs-type">DOUBLE PRECISION</span>,
+    <span class="hljs-keyword">PRIMARY KEY</span> (<span class="hljs-type">timestamp</span>)
+);
+</code></pre>
+<p><strong>Objašnjenje</strong>:</p>
+<ul>
+<li><code>TIMESTAMPTZ</code> - timestamp s time zone (uvijek u UTC)</li>
+<li><code>DEFAULT NOW()</code> - automatski postavlja trenutno vrijeme</li>
+<li><code>DOUBLE PRECISION</code> - 8-byte floating point (~15 decimala preciznosti)</li>
+<li><code>PRIMARY KEY (timestamp)</code> - jedinstveni identifikator retka</li>
+</ul>
+<h3 id="tipovi-podataka">Tipovi podataka</h3>
+<table>
+<thead>
+<tr>
+<th>Tip</th>
+<th>Opis</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>TIMESTAMPTZ</code></td>
+<td>Datum i vrijeme s time zone</td>
+</tr>
+<tr>
+<td><code>DOUBLE PRECISION</code></td>
+<td>Decimalni broj (64-bit)</td>
+</tr>
+<tr>
+<td><code>TEXT</code></td>
+<td>Tekst neograničene dužine</td>
+</tr>
+</tbody></table>
+<pre><code class="hljs sql"><span class="hljs-keyword">SELECT</span> create_hypertable(
+    <span class="hljs-string">'sensor_data'</span>,
+    <span class="hljs-string">'timestamp'</span>,
+    if_not_exists <span class="hljs-operator">=</span><span class="hljs-operator">&gt;</span> <span class="hljs-literal">TRUE</span>,
+    chunk_time_interval <span class="hljs-operator">=</span><span class="hljs-operator">&gt;</span> <span class="hljs-type">interval</span> <span class="hljs-string">'1 day'</span>
+);
+</code></pre>
+<p><strong>Objašnjenje</strong>:</p>
+<ul>
+<li><code>create_hypertable(...)</code> - pretvara tablicu u TimescaleDB hypertable</li>
+<li><code>'timestamp'</code> - kolona za particioniranje</li>
+<li><code>chunk_time_interval =&gt; interval '1 day'</code> - nova particija svakog dana</li>
+</ul>
+<h3 id="što-je-hypertable">Što je Hypertable?</h3>
+<p>Hypertable je TimescaleDB koncept za <strong>automatsko particioniranje</strong>:</p>
+<ul>
+<li>Podaci se dijele u "chunkove" po vremenu</li>
+<li>Svaki chunk je zasebna tablica</li>
+<li>Upiti na nedavne podatke su brži jer ne pretražuju stare chunkove</li>
+</ul>
+<pre><code class="hljs sql"><span class="hljs-keyword">CREATE TABLE</span> IF <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">EXISTS</span> fault_events (
+    <span class="hljs-type">timestamp</span> TIMESTAMPTZ <span class="hljs-keyword">NOT NULL</span> <span class="hljs-keyword">DEFAULT</span> NOW(),
+    abnormal <span class="hljs-type">DOUBLE PRECISION</span> <span class="hljs-keyword">NOT NULL</span>,
+    normal <span class="hljs-type">DOUBLE PRECISION</span> <span class="hljs-keyword">NOT NULL</span>,
+    conclusion TEXT <span class="hljs-keyword">NOT NULL</span>
+);
+
+<span class="hljs-keyword">SELECT</span> create_hypertable(
+    <span class="hljs-string">'fault_events'</span>,
+    <span class="hljs-string">'timestamp'</span>,
+    if_not_exists <span class="hljs-operator">=</span><span class="hljs-operator">&gt;</span> <span class="hljs-literal">TRUE</span>
+);
+</code></pre>
+<p><strong>Objašnjenje</strong>: Tablica za detektirane kvarove, također hypertable.</p>
+<pre><code class="hljs sql"><span class="hljs-keyword">CREATE</span> INDEX IF <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">EXISTS</span> idx_sensor_abnormal
+<span class="hljs-keyword">ON</span> sensor_data(abnormal <span class="hljs-keyword">DESC</span>, <span class="hljs-type">timestamp</span> <span class="hljs-keyword">DESC</span>);
+
+<span class="hljs-keyword">CREATE</span> INDEX IF <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">EXISTS</span> idx_faults_conclusion
+<span class="hljs-keyword">ON</span> fault_events(conclusion, <span class="hljs-type">timestamp</span> <span class="hljs-keyword">DESC</span>);
+</code></pre>
+<p><strong>Objašnjenje</strong>:</p>
+<ul>
+<li><code>CREATE INDEX</code> - kreira indeks za brže pretraživanje</li>
+<li><code>DESC</code> - silazni redoslijed (novije prvo)</li>
+</ul>
+<h3 id="što-je-index">Što je Index?</h3>
+<p>Index je kao kazalo u knjizi - umjesto da čitaš cijelu knjigu, pogledaš kazalo i nađeš stranicu.</p>
+<pre><code class="hljs sql"><span class="hljs-comment">-- Bez indexa: O(n) - pregledaj svaki red</span>
+<span class="hljs-comment">-- S indexom: O(log n) - pretraži B-tree strukturu</span>
+</code></pre>
+<hr>
+<h1 id="📄-datoteka-mosquittoconf">📄 DATOTEKA: mosquitto.conf</h1>
+<pre><code class="hljs properties"><span class="hljs-attr">listener</span> <span class="hljs-string">1883 0.0.0.0</span>
+</code></pre>
+<p><strong>Objašnjenje</strong>:</p>
+<ul>
+<li><code>listener</code> - definira gdje Mosquitto sluša</li>
+<li><code>1883</code> - port broj</li>
+<li><code>0.0.0.0</code> - sluša na svim mrežnim sučeljima</li>
+</ul>
+<pre><code class="hljs properties"><span class="hljs-attr">allow_anonymous</span> <span class="hljs-string">true</span>
+</code></pre>
+<p><strong>Objašnjenje</strong>: Dopušta konekcije bez username/password. Za development OK, za produkciju treba promijeniti.</p>
+<pre><code class="hljs properties"><span class="hljs-attr">log_dest</span> <span class="hljs-string">stdout</span>
+</code></pre>
+<p><strong>Objašnjenje</strong>: Logovi se ispisuju na standardni output (vidljivi u <code>docker logs</code>).</p>
+<hr>
+<h1 id="📄-datoteka-indexhtml">📄 DATOTEKA: index.html</h1>
+<pre><code class="hljs html"><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-keyword">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">"hr"</span>&gt;</span>
+</code></pre>
+<p><strong>Objašnjenje</strong>:</p>
+<ul>
+<li><code>&lt;!DOCTYPE html&gt;</code> - deklarira HTML5 dokument</li>
+<li><code>lang="hr"</code> - jezik stranice (hrvatski)</li>
+</ul>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">"UTF-8"</span>&gt;</span>
+</code></pre>
+<p><strong>Objašnjenje</strong>: Definira encoding (UTF-8 podržava hrvatske znakove).</p>
+<pre><code class="hljs html">  <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"viewport"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"width=device-width, initial-scale=1.0"</span>&gt;</span>
+</code></pre>
+<p><strong>Objašnjenje</strong>: Responsive design - stranica se prilagođava veličini ekrana.</p>
+<pre><code class="hljs html">  <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>EdgeAI - Kontrolna ploča<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"description"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"..."</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/static/style.css"</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+</code></pre>
+<p><strong>Objašnjenje</strong>:</p>
+<ul>
+<li><code>&lt;title&gt;</code> - naslov u tabu browsera</li>
+<li><code>&lt;meta description&gt;</code> - opis za search engine</li>
+<li><code>&lt;link rel="stylesheet"&gt;</code> - povezuje CSS datoteku</li>
+</ul>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">header</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"page-header"</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"banner"</span>&gt;</span>
+</code></pre>
+<p><strong>Objašnjenje</strong>:</p>
+<ul>
+<li><code>&lt;header&gt;</code> - semantički element za zaglavlje</li>
+<li><code>role="banner"</code> - ARIA role za accessibility</li>
+</ul>
+<h3 id="aria-accessible-rich-internet-applications">ARIA (Accessible Rich Internet Applications)</h3>
+<p>ARIA atributi pomažu čitačima ekrana (screen readers) za slijepe korisnike da razumiju sadržaj.</p>
+<pre><code class="hljs html">    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"header-title"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>Edge AI prediktivno održavanje sustava u industriji<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"subtitle"</span>&gt;</span>
+        EdgeAI (nRF5340DK-TinyML) → MQTT Broker → GO Backend + TimescaleDB + WEB dashboard (RPi)
+      <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
+<p><strong>Objašnjenje</strong>: Naslov i podnaslov koji opisuje arhitekturu sustava.</p>
+<pre><code class="hljs html">  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"status-bar"</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"status"</span> <span class="hljs-attr">aria-live</span>=<span class="hljs-string">"polite"</span>&gt;</span>
+    MQTT Broker: <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"mqtt-status"</span>&gt;</span>Checking...<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> |
+    Baza podataka: <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"db-status"</span>&gt;</span>Checking...<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
+<p><strong>Objašnjenje</strong>:</p>
+<ul>
+<li><code>id="mqtt-status"</code> - JavaScript može dohvatiti ovaj element po ID-u</li>
+<li><code>aria-live="polite"</code> - obavještava screen reader o promjenama</li>
+</ul>
+<pre><code class="hljs html">  <span class="hljs-tag">&lt;<span class="hljs-name">main</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"dashboard-container"</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"main"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">section</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"faults-panel"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>Detektirani kvarovi:<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"faults-panel-content"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"sensor-data"</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"log"</span> <span class="hljs-attr">aria-live</span>=<span class="hljs-string">"polite"</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
+</code></pre>
+<p><strong>Objašnjenje</strong>:</p>
+<ul>
+<li><code>&lt;main&gt;</code> - glavni sadržaj stranice</li>
+<li><code>&lt;section&gt;</code> - logička sekcija</li>
+<li><code>id="sensor-data"</code> - JavaScript će ovdje dodavati kvarove</li>
+</ul>
+<pre><code class="hljs html">    <span class="hljs-tag">&lt;<span class="hljs-name">section</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"chart-panel"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">canvas</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"faultChart"</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"400"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"300"</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">canvas</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">main</span>&gt;</span>
+</code></pre>
+<p><strong>Objašnjenje</strong>:</p>
+<ul>
+<li><code>&lt;canvas&gt;</code> - HTML element za crtanje grafike</li>
+<li>Chart.js koristi canvas za grafove</li>
+</ul>
+<pre><code class="hljs html">  <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://cdn.jsdelivr.net/npm/chart.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"/static/script.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</code></pre>
+<p><strong>Objašnjenje</strong>:</p>
+<ul>
+<li>Učitava Chart.js s CDN-a</li>
+<li>Učitava naš JavaScript</li>
+</ul>
+<hr>
+<h1 id="📄-datoteka-scriptjs">📄 DATOTEKA: script.js</h1>
+<pre><code class="hljs javascript"><span class="hljs-keyword">let</span> faultChart = <span class="hljs-literal">null</span>;
+<span class="hljs-keyword">let</span> ws = <span class="hljs-literal">null</span>;
+<span class="hljs-keyword">let</span> pendingMessages = [];
+<span class="hljs-keyword">let</span> isChartReady = <span class="hljs-literal">false</span>;
+</code></pre>
+<p><strong>Objašnjenje</strong>: Globalne varijable:</p>
+<ul>
+<li><code>faultChart</code> - Chart.js instanca</li>
+<li><code>ws</code> - WebSocket konekcija</li>
+<li><code>pendingMessages</code> - buffer poruka dok chart nije spreman</li>
+<li><code>isChartReady</code> - flag da li je chart inicijaliziran</li>
+</ul>
+<pre><code class="hljs javascript"><span class="hljs-variable language_">document</span>.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">'DOMContentLoaded'</span>, <span class="hljs-function">() =&gt;</span> {
+    <span class="hljs-title function_">initEmptyChart</span>();
+    <span class="hljs-title function_">initWebSocket</span>();
+    <span class="hljs-title function_">loadInitial</span>();
+});
+</code></pre>
+<p><strong>Objašnjenje</strong>:</p>
+<ul>
+<li><code>DOMContentLoaded</code> - event koji se okida kad je HTML učitan</li>
+<li>Pokreće tri inicijalizacije</li>
+</ul>
+<h3 id="event-listener">Event Listener</h3>
+<pre><code class="hljs javascript">element.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">'eventType'</span>, callbackFunction);
+</code></pre>
+<p>Browser poziva callback kada se dogodi event.</p>
+<pre><code class="hljs javascript"><span class="hljs-keyword">function</span> <span class="hljs-title function_">initEmptyChart</span>(<span class="hljs-params"></span>) {
+    <span class="hljs-keyword">const</span> ctx = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">"faultChart"</span>);
+
+    faultChart = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Chart</span>(ctx, {
+        <span class="hljs-attr">type</span>: <span class="hljs-string">'line'</span>,
+        <span class="hljs-attr">data</span>: {
+            <span class="hljs-attr">labels</span>: [],
+            <span class="hljs-attr">datasets</span>: [{
+                <span class="hljs-attr">label</span>: <span class="hljs-string">'Abnormal'</span>,
+                <span class="hljs-attr">data</span>: [],
+                <span class="hljs-attr">borderColor</span>: <span class="hljs-string">'red'</span>,
+                <span class="hljs-attr">pointBackgroundColor</span>: [],
+                <span class="hljs-attr">tension</span>: <span class="hljs-number">0.3</span>,
+                <span class="hljs-attr">fill</span>: <span class="hljs-literal">false</span>
+            }]
+        },
+        <span class="hljs-attr">options</span>: {
+            <span class="hljs-attr">responsive</span>: <span class="hljs-literal">true</span>,
+            <span class="hljs-attr">maintainAspectRatio</span>: <span class="hljs-literal">false</span>
+        }
+    });
+    isChartReady = <span class="hljs-literal">true</span>;
+}
+</code></pre>
+<p><strong>Objašnjenje</strong>:</p>
+<ul>
+<li><code>document.getElementById(...)</code> - dohvaća HTML element po ID-u</li>
+<li><code>new Chart(...)</code> - kreira Chart.js graf</li>
+<li><code>type: 'line'</code> - linijski graf</li>
+<li><code>labels</code> - X os (vremenske oznake)</li>
+<li><code>datasets</code> - podaci za crtanje</li>
+<li><code>tension: 0.3</code> - zakrivljenost linije</li>
+<li><code>responsive: true</code> - automatski resize</li>
+</ul>
+<pre><code class="hljs javascript"><span class="hljs-keyword">function</span> <span class="hljs-title function_">initWebSocket</span>(<span class="hljs-params"></span>) {
+    <span class="hljs-keyword">const</span> protocol = <span class="hljs-variable language_">window</span>.<span class="hljs-property">location</span>.<span class="hljs-property">protocol</span> === <span class="hljs-string">'https:'</span> ? <span class="hljs-string">'wss:'</span> : <span class="hljs-string">'ws:'</span>;
+    ws = <span class="hljs-keyword">new</span> <span class="hljs-title class_">WebSocket</span>(<span class="hljs-string">`<span class="hljs-subst">${protocol}</span>//<span class="hljs-subst">${<span class="hljs-variable language_">window</span>.location.host}</span>/ws`</span>);
+</code></pre>
+<p><strong>Objašnjenje</strong>:</p>
+<ul>
+<li>Određuje protokol (ws: ili wss: za sigurnu vezu)</li>
+<li><code>window.location.host</code> - hostname trenutne stranice</li>
+<li>Template literal (`...`) - string s varijablama</li>
+</ul>
+<pre><code class="hljs javascript">    ws.<span class="hljs-property">onopen</span> = <span class="hljs-function">() =&gt;</span> {
+        <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">"WebSocket connected to Go backend"</span>);
+        <span class="hljs-title function_">flushPending</span>();
+    };
+</code></pre>
+<p><strong>Objašnjenje</strong>: Callback kada se WebSocket spoji. Procesuira buffered poruke.</p>
+<pre><code class="hljs javascript">    ws.<span class="hljs-property">onmessage</span> = <span class="hljs-function">(<span class="hljs-params">evt</span>) =&gt;</span> {
+        <span class="hljs-keyword">try</span> {
+            <span class="hljs-keyword">const</span> msg = <span class="hljs-title class_">JSON</span>.<span class="hljs-title function_">parse</span>(evt.<span class="hljs-property">data</span>);
+            <span class="hljs-title function_">handleIncoming</span>(msg);
+        } <span class="hljs-keyword">catch</span> (err) {
+            <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">error</span>(<span class="hljs-string">"Invalid WebSocket JSON:"</span>, evt.<span class="hljs-property">data</span>, <span class="hljs-string">"Error:"</span>, err);
+        }
+    };
+</code></pre>
+<p><strong>Objašnjenje</strong>:</p>
+<ul>
+<li><code>onmessage</code> - callback za primljene poruke</li>
+<li><code>JSON.parse(...)</code> - pretvara JSON string u JavaScript objekt</li>
+<li><code>try/catch</code> - hvata greške parsiranja</li>
+</ul>
+<pre><code class="hljs javascript">    ws.<span class="hljs-property">onclose</span> = <span class="hljs-function">(<span class="hljs-params">event</span>) =&gt;</span> {
+        <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">warn</span>(<span class="hljs-string">`WebSocket closed (code: <span class="hljs-subst">${event.code}</span>), reconnecting...`</span>);
+        <span class="hljs-built_in">setTimeout</span>(initWebSocket, <span class="hljs-number">1000</span>);
+    };
+</code></pre>
+<p><strong>Objašnjenje</strong>:</p>
+<ul>
+<li><code>onclose</code> - callback kada se veza prekine</li>
+<li><code>setTimeout(initWebSocket, 1000)</code> - pokušava reconnect nakon 1 sekunde</li>
+</ul>
+<h3 id="reconnect-pattern">Reconnect Pattern</h3>
+<p>Automatski reconnect osigurava da dashboard nastavi raditi čak i ako server na kratko nestane.</p>
+<pre><code class="hljs javascript"><span class="hljs-keyword">function</span> <span class="hljs-title function_">handleIncoming</span>(<span class="hljs-params">msg</span>) {
+    <span class="hljs-keyword">if</span> (!isChartReady) {
+        pendingMessages.<span class="hljs-title function_">push</span>(msg);
+        <span class="hljs-keyword">return</span>;
+    }
+
+    <span class="hljs-keyword">if</span> (msg.<span class="hljs-property">type</span> === <span class="hljs-string">'NEW_FAULT'</span>) {
+        <span class="hljs-title function_">addFault</span>(msg.<span class="hljs-property">data</span>);
+        <span class="hljs-title function_">appendToChart</span>(msg.<span class="hljs-property">data</span>);
+    } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (msg.<span class="hljs-property">type</span> === <span class="hljs-string">'STATUS'</span>) {
+        <span class="hljs-title function_">updateStatus</span>(msg.<span class="hljs-property">data</span>);
+    }
+}
+</code></pre>
+<p><strong>Objašnjenje</strong>:</p>
+<ul>
+<li>Buffering dok chart nije spreman</li>
+<li>Routing po tipu poruke</li>
+</ul>
+<pre><code class="hljs javascript"><span class="hljs-keyword">async</span> <span class="hljs-keyword">function</span> <span class="hljs-title function_">loadInitial</span>(<span class="hljs-params"></span>) {
+    <span class="hljs-keyword">try</span> {
+        <span class="hljs-keyword">const</span> res = <span class="hljs-keyword">await</span> <span class="hljs-title function_">fetch</span>(<span class="hljs-string">'/api/faults'</span>);
+        <span class="hljs-keyword">const</span> data = <span class="hljs-keyword">await</span> res.<span class="hljs-title function_">json</span>();
+</code></pre>
+<p><strong>Objašnjenje</strong>:</p>
+<ul>
+<li><code>async/await</code> - moderni način pisanja asinkronog koda</li>
+<li><code>fetch(...)</code> - HTTP zahtjev</li>
+<li><code>res.json()</code> - parsira JSON response</li>
+</ul>
+<h3 id="asyncawait-vs-callbacks">Async/Await vs Callbacks</h3>
+<pre><code class="hljs javascript"><span class="hljs-comment">// Callbacks (stari način)</span>
+<span class="hljs-title function_">fetch</span>(<span class="hljs-string">'/api/data'</span>)
+    .<span class="hljs-title function_">then</span>(<span class="hljs-function"><span class="hljs-params">res</span> =&gt;</span> res.<span class="hljs-title function_">json</span>())
+    .<span class="hljs-title function_">then</span>(<span class="hljs-function"><span class="hljs-params">data</span> =&gt;</span> <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(data))
+    .<span class="hljs-title function_">catch</span>(<span class="hljs-function"><span class="hljs-params">err</span> =&gt;</span> <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">error</span>(err));
+
+<span class="hljs-comment">// Async/await (moderni način)</span>
+<span class="hljs-keyword">async</span> <span class="hljs-keyword">function</span> <span class="hljs-title function_">getData</span>(<span class="hljs-params"></span>) {
+    <span class="hljs-keyword">try</span> {
+        <span class="hljs-keyword">const</span> res = <span class="hljs-keyword">await</span> <span class="hljs-title function_">fetch</span>(<span class="hljs-string">'/api/data'</span>);
+        <span class="hljs-keyword">const</span> data = <span class="hljs-keyword">await</span> res.<span class="hljs-title function_">json</span>();
+        <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(data);
+    } <span class="hljs-keyword">catch</span> (err) {
+        <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">error</span>(err);
+    }
+}
+</code></pre>
+<pre><code class="hljs javascript">        data.<span class="hljs-title function_">reverse</span>().<span class="hljs-title function_">forEach</span>(addFault);
+        data.<span class="hljs-title function_">forEach</span>(appendToChart);
+        <span class="hljs-title function_">flushPending</span>();
+</code></pre>
+<p><strong>Objašnjenje</strong>:</p>
+<ul>
+<li><code>reverse()</code> - obrće redoslijed (najnovije gore u listi)</li>
+<li><code>forEach(...)</code> - iterira kroz array</li>
+<li>Zatim procesuira buffered WS poruke</li>
+</ul>
+<pre><code class="hljs javascript"><span class="hljs-keyword">function</span> <span class="hljs-title function_">appendToChart</span>(<span class="hljs-params">e</span>) {
+    <span class="hljs-keyword">if</span> (!faultChart) <span class="hljs-keyword">return</span>;
+    faultChart.<span class="hljs-property">data</span>.<span class="hljs-property">labels</span>.<span class="hljs-title function_">push</span>(<span class="hljs-keyword">new</span> <span class="hljs-title class_">Date</span>(e.<span class="hljs-property">timestamp</span>).<span class="hljs-title function_">toLocaleTimeString</span>());
+    faultChart.<span class="hljs-property">data</span>.<span class="hljs-property">datasets</span>[<span class="hljs-number">0</span>].<span class="hljs-property">data</span>.<span class="hljs-title function_">push</span>(e.<span class="hljs-property">abnormal</span>);
+    faultChart.<span class="hljs-property">data</span>.<span class="hljs-property">datasets</span>[<span class="hljs-number">0</span>].<span class="hljs-property">pointBackgroundColor</span>.<span class="hljs-title function_">push</span>(
+        e.<span class="hljs-property">conclusion</span> === <span class="hljs-string">'KVAR'</span> ? <span class="hljs-string">'red'</span> : <span class="hljs-string">'green'</span>
+    );
+</code></pre>
+<p><strong>Objašnjenje</strong>:</p>
+<ul>
+<li>Dodaje vremensku oznaku kao label</li>
+<li>Dodaje abnormal vrijednost kao data point</li>
+<li>Boja točke ovisno o conclusion</li>
+</ul>
+<pre><code class="hljs javascript">    <span class="hljs-keyword">if</span> (faultChart.<span class="hljs-property">data</span>.<span class="hljs-property">labels</span>.<span class="hljs-property">length</span> &gt; <span class="hljs-number">50</span>) {
+        faultChart.<span class="hljs-property">data</span>.<span class="hljs-property">labels</span>.<span class="hljs-title function_">shift</span>();
+        faultChart.<span class="hljs-property">data</span>.<span class="hljs-property">datasets</span>[<span class="hljs-number">0</span>].<span class="hljs-property">data</span>.<span class="hljs-title function_">shift</span>();
+        faultChart.<span class="hljs-property">data</span>.<span class="hljs-property">datasets</span>[<span class="hljs-number">0</span>].<span class="hljs-property">pointBackgroundColor</span>.<span class="hljs-title function_">shift</span>();
+    }
+    <span class="hljs-title function_">requestAnimationFrame</span>(<span class="hljs-function">() =&gt;</span> faultChart.<span class="hljs-title function_">update</span>());
+}
+</code></pre>
+<p><strong>Objašnjenje</strong>:</p>
+<ul>
+<li>Ograničava na 50 točaka (performance)</li>
+<li><code>shift()</code> - uklanja prvi element arraya</li>
+<li><code>requestAnimationFrame(...)</code> - optimizira rendering</li>
+</ul>
+<h3 id="requestanimationframe">requestAnimationFrame</h3>
+<p>Browser optimizacija - sinkronizira update s refresh rate ekrana (obično 60fps).</p>
+<pre><code class="hljs javascript"><span class="hljs-keyword">function</span> <span class="hljs-title function_">addFault</span>(<span class="hljs-params">e</span>) {
+    <span class="hljs-keyword">const</span> container = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">"sensor-data"</span>);
+    <span class="hljs-keyword">const</span> color = e.<span class="hljs-property">conclusion</span> === <span class="hljs-string">'KVAR'</span> ? <span class="hljs-string">'red'</span> : <span class="hljs-string">'green'</span>;
+    <span class="hljs-keyword">const</span> faultEntry = <span class="hljs-string">`
+        &lt;div style="background:#ffe6e6; padding:6px; margin-bottom:6px; border-left:4px solid <span class="hljs-subst">${color}</span>"&gt;
+            &lt;b&gt;<span class="hljs-subst">${<span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(e.timestamp).toLocaleString()}</span>&lt;/b&gt;&lt;br&gt;
+            Abnormal: <span class="hljs-subst">${e.abnormal}</span>&lt;br&gt;
+            Normal: <span class="hljs-subst">${e.normal}</span>&lt;br&gt;
+            Status: &lt;span style="color:<span class="hljs-subst">${color}</span>; font-weight:bold"&gt;<span class="hljs-subst">${e.conclusion}</span>&lt;/span&gt;
+        &lt;/div&gt;
+    `</span>;
+    container.<span class="hljs-property">innerHTML</span> = faultEntry + container.<span class="hljs-property">innerHTML</span>;
+}
+</code></pre>
+<p><strong>Objašnjenje</strong>:</p>
+<ul>
+<li>Kreira HTML string za prikaz kvara</li>
+<li><code>innerHTML = faultEntry + container.innerHTML</code> - dodaje na početak</li>
+</ul>
+<pre><code class="hljs javascript"><span class="hljs-keyword">function</span> <span class="hljs-title function_">updateStatus</span>(<span class="hljs-params">d</span>) {
+    <span class="hljs-keyword">const</span> mqttEl = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">"mqtt-status"</span>);
+    <span class="hljs-keyword">const</span> dbEl = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">"db-status"</span>);
+    mqttEl.<span class="hljs-property">textContent</span> = d.<span class="hljs-property">mqtt</span>;
+    mqttEl.<span class="hljs-property">style</span>.<span class="hljs-property">color</span> = d.<span class="hljs-property">mqtt</span> === <span class="hljs-string">'CONNECTED'</span> ? <span class="hljs-string">'green'</span> : <span class="hljs-string">'red'</span>;
+    dbEl.<span class="hljs-property">textContent</span> = d.<span class="hljs-property">db</span>;
+    dbEl.<span class="hljs-property">style</span>.<span class="hljs-property">color</span> = d.<span class="hljs-property">db</span> === <span class="hljs-string">'OK'</span> ? <span class="hljs-string">'green'</span> : <span class="hljs-string">'red'</span>;
+}
+</code></pre>
+<p><strong>Objašnjenje</strong>: Ažurira status indikatore s odgovarajućom bojom.</p>
+<hr>
+<h1 id="📄-datoteka-stylecss">📄 DATOTEKA: style.css</h1>
+<pre><code class="hljs css"><span class="hljs-selector-tag">body</span> {
+    <span class="hljs-attribute">font-family</span>: Arial, sans-serif;
+    <span class="hljs-attribute">margin</span>: <span class="hljs-number">20px</span>;
+    <span class="hljs-attribute">background</span>: <span class="hljs-number">#f0f0f0</span>;
+    <span class="hljs-attribute">color</span>: <span class="hljs-number">#333</span>;
+}
+</code></pre>
+<p><strong>Objašnjenje</strong>:</p>
+<ul>
+<li><code>font-family</code> - font za tekst, s fallback-om</li>
+<li><code>margin</code> - razmak od rubova</li>
+<li><code>background</code> - boja pozadine</li>
+<li><code>color</code> - boja teksta</li>
+</ul>
+<pre><code class="hljs css"><span class="hljs-selector-class">.dashboard-container</span> {
+    <span class="hljs-attribute">display</span>: flex;
+    <span class="hljs-attribute">gap</span>: <span class="hljs-number">20px</span>;
+    <span class="hljs-attribute">align-items</span>: stretch;
+    <span class="hljs-attribute">min-height</span>: <span class="hljs-number">400px</span>;
+}
+</code></pre>
+<p><strong>Objašnjenje</strong>:</p>
+<ul>
+<li><code>display: flex</code> - Flexbox layout</li>
+<li><code>gap</code> - razmak između elemenata</li>
+<li><code>align-items: stretch</code> - elementi se razvlače na istu visinu</li>
+</ul>
+<h3 id="flexbox">Flexbox</h3>
+<p>Flexbox je CSS layout model za 1D rasporede (redak ili stupac):</p>
+<pre><code class="hljs css"><span class="hljs-selector-class">.container</span> {
+    <span class="hljs-attribute">display</span>: flex;
+    <span class="hljs-attribute">flex-direction</span>: row;     <span class="hljs-comment">/* ili column */</span>
+    <span class="hljs-attribute">justify-content</span>: center; <span class="hljs-comment">/* horizontalno poravnanje */</span>
+    <span class="hljs-attribute">align-items</span>: center;     <span class="hljs-comment">/* vertikalno poravnanje */</span>
+}
+</code></pre>
+<pre><code class="hljs css"><span class="hljs-selector-class">.faults-panel</span>,
+<span class="hljs-selector-class">.chart-panel</span> {
+    <span class="hljs-attribute">flex</span>: <span class="hljs-number">1</span>;
+    <span class="hljs-attribute">min-height</span>: <span class="hljs-number">400px</span>;
+    <span class="hljs-attribute">max-height</span>: <span class="hljs-number">400px</span>;
+    <span class="hljs-attribute">padding</span>: <span class="hljs-number">8px</span>;
+    <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">8px</span>;
+    <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid <span class="hljs-number">#ccc</span>;
+    <span class="hljs-attribute">display</span>: flex;
+    <span class="hljs-attribute">flex-direction</span>: column;
+}
+</code></pre>
+<p><strong>Objašnjenje</strong>:</p>
+<ul>
+<li><code>flex: 1</code> - oba panela dijele prostor jednako</li>
+<li><code>flex-direction: column</code> - unutarnji elementi su u stupcu</li>
+</ul>
+<pre><code class="hljs css"><span class="hljs-selector-class">.faults-panel-content</span> {
+    <span class="hljs-attribute">flex</span>: <span class="hljs-number">1</span>;
+    <span class="hljs-attribute">overflow-y</span>: auto;
+    <span class="hljs-attribute">min-height</span>: <span class="hljs-number">0</span>;
+}
+</code></pre>
+<p><strong>Objašnjenje</strong>:</p>
+<ul>
+<li><code>overflow-y: auto</code> - scroll ako sadržaj prelazi</li>
+<li><code>min-height: 0</code> - fix za flex overflow</li>
+</ul>
+<hr>
+<h1 id="📄-datoteka-packagejson">📄 DATOTEKA: package.json</h1>
+<pre><code class="hljs json"><span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">"dependencies"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span>
+    <span class="hljs-attr">"chart.js"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"^4.5.1"</span>
+  <span class="hljs-punctuation">}</span>
+<span class="hljs-punctuation">}</span>
+</code></pre>
+<p><strong>Objašnjenje</strong>:</p>
+<ul>
+<li><code>package.json</code> je konfiguracijska datoteka za Node.js projekte</li>
+<li>U ovom slučaju samo dokumentira da projekt koristi Chart.js</li>
+<li><code>^4.5.1</code> - verzija 4.5.1 ili novija patch/minor verzija</li>
+</ul>
+<p><strong>Napomena</strong>: Chart.js se zapravo učitava s CDN-a u HTML-u, ne instalira se lokalno.</p>
+<hr>
+<h1 id="🔄-tok-podataka-data-flow">🔄 TOK PODATAKA (DATA FLOW)</h1>
+<h2 id="1-senzor-šalje-podatke">1. Senzor šalje podatke</h2>
+<pre><code>nRF5340DK mikrokontroler:
+1. Čita vibracije s akcelerometra
+2. TinyML model klasificira: "OK" ili "KVAR"
+3. Šalje JSON na MQTT topic: edgeai/fault
+</code></pre>
+<h2 id="2-mqtt-prima-i-prosljeđuje">2. MQTT prima i prosljeđuje</h2>
+<pre><code>Mosquitto broker:
+1. Prima poruku na port 1883
+2. Prosljeđuje svim subscriberima (Go backend)
+</code></pre>
+<h2 id="3-go-backend-obrađuje">3. Go backend obrađuje</h2>
+<pre><code>StartMQTT() → Subscribe callback:
+1. Prima JSON poruku
+2. Parsira u FaultPayload strukturu
+3. Šalje u faultChan kanal
+
+faultWorker() goroutina:
+1. Prima iz faultChan
+2. Filtrira (samo KVAR)
+3. InsertFaultEvent() → sprema u TimescaleDB
+4. BroadcastFault() → šalje na WebSocket
+</code></pre>
+<h2 id="4-frontend-prima-i-prikazuje">4. Frontend prima i prikazuje</h2>
+<pre><code>WebSocket onmessage:
+1. Prima JSON poruku
+2. handleIncoming() routira po tipu
+3. NEW_FAULT → addFault() + appendToChart()
+4. STATUS → updateStatus()
+</code></pre>
+<hr>
+<h1 id="🏗️-arhitekturalni-koncepti">🏗️ ARHITEKTURALNI KONCEPTI</h1>
+<h2 id="microservices-architecture">Microservices Architecture</h2>
+<p>Projekt koristi mikroservisnu arhitekturu:</p>
+<ul>
+<li><strong>db</strong> - servis za bazu</li>
+<li><strong>mqtt</strong> - servis za messaging</li>
+<li><strong>backend</strong> - aplikacijska logika</li>
+</ul>
+<p>Prednosti:</p>
+<ul>
+<li>Nezavisno skaliranje</li>
+<li>Različite tehnologije za svaki servis</li>
+<li>Izolacija grešaka</li>
+</ul>
+<h2 id="event-driven-architecture">Event-Driven Architecture</h2>
+<p>Sustav je vođen događajima:</p>
+<ol>
+<li>Senzor <strong>objavljuje</strong> događaj (MQTT publish)</li>
+<li>Backend <strong>reagira</strong> na događaj</li>
+<li>Dashboard <strong>prima</strong> event kroz WebSocket</li>
+</ol>
+<h2 id="producer-consumer-pattern">Producer-Consumer Pattern</h2>
+<pre><code>Producer (MQTT callback) → Buffer (faultChan) → Consumer (faultWorker)
+</code></pre>
+<p>Buffer odvaja brzog producera od sporijeg consumera.</p>
+<h2 id="pubsub-pattern">Pub/Sub Pattern</h2>
+<p>MQTT koristi publish/subscribe:</p>
+<ul>
+<li>Publisheri ne znaju tko sluša</li>
+<li>Subscriberi ne znaju tko šalje</li>
+<li>Broker spaja sve</li>
+</ul>
+<hr>
+<h1 id="🛡️-sigurnosni-koncepti">🛡️ SIGURNOSNI KONCEPTI</h1>
+<h2 id="password-hashing-bcrypt">Password Hashing (Bcrypt)</h2>
+<p>Lozinke se nikad ne spremaju u plain textu:</p>
+<pre><code>plaintext: "admin123"
+hash: "$2a$10$N9qo8uLOickgx2ZMRZoMye..."
+</code></pre>
+<ul>
+<li>Sporo (otežava brute-force)</li>
+<li>Salt (identične lozinke daju različite hashove)</li>
+</ul>
+<h2 id="sql-injection-prevention">SQL Injection Prevention</h2>
+<p>Korištenje parameterized queries:</p>
+<pre><code class="hljs go"><span class="hljs-comment">// OPASNO</span>
+query := <span class="hljs-string">"SELECT * FROM users WHERE name = '"</span> + userInput + <span class="hljs-string">"'"</span>
+
+<span class="hljs-comment">// SIGURNO</span>
+DB.Query(<span class="hljs-string">"SELECT * FROM users WHERE name = $1"</span>, userInput)
+</code></pre>
+<h2 id="basic-authentication">Basic Authentication</h2>
+<p>HTTP Basic Auth šalje credentials u svakom zahtjevu:</p>
+<ul>
+<li>Base64 encoded (NE enkripcija!)</li>
+<li>Treba HTTPS u produkciji</li>
+</ul>
+<hr>
+<h1 id="🔧-kako-pokrenuti-projekt">🔧 KAKO POKRENUTI PROJEKT</h1>
+<pre><code class="hljs bash"><span class="hljs-comment"># 1. Kloniraj projekt</span>
+git <span class="hljs-built_in">clone</span> &lt;repo-url&gt;
+<span class="hljs-built_in">cd</span> EdgeAI_RPi_Docker
+
+<span class="hljs-comment"># 2. Pokreni sve servise</span>
+docker-compose up -d
+
+<span class="hljs-comment"># 3. Provjeri logove</span>
+docker-compose logs -f backend
+
+<span class="hljs-comment"># 4. Otvori dashboard</span>
+<span class="hljs-comment"># http://localhost:8080</span>
+<span class="hljs-comment"># Username: admin</span>
+<span class="hljs-comment"># Password: admin123</span>
+</code></pre>
+<hr>
+<h1 id="📊-dijagram-komponenata">📊 DIJAGRAM KOMPONENATA</h1>
+<pre><code>┌─────────────────────────────────────────────────────────────────┐
+│                     DOCKER COMPOSE                               │
+│  ┌─────────────┐  ┌─────────────┐  ┌─────────────────────────┐  │
+│  │ TimescaleDB │  │  Mosquitto  │  │      Go Backend         │  │
+│  │             │  │   (MQTT)    │  │  ┌─────────────────────┐│  │
+│  │ fault_events│◄─┼─────────────┼──┤  │    main.go          ││  │
+│  │ sensor_data │  │             │  │  │    (orchestration)  ││  │
+│  │             │  │ Port: 1883  │  │  └─────────────────────┘│  │
+│  │ Port: 5432  │  │             │  │  ┌─────────────────────┐│  │
+│  └─────────────┘  └─────────────┘  │  │    mqtt.go          ││  │
+│                                     │  │    (MQTT client)    ││  │
+│                                     │  └─────────────────────┘│  │
+│                                     │  ┌─────────────────────┐│  │
+│                                     │  │    db.go            ││  │
+│                                     │  │    (DB operations)  ││  │
+│                                     │  └─────────────────────┘│  │
+│                                     │  ┌─────────────────────┐│  │
+│                                     │  │    websocket.go     ││  │
+│                                     │  │    (Real-time)      ││  │
+│                                     │  └─────────────────────┘│  │
+│                                     │  ┌─────────────────────┐│  │
+│                                     │  │    api.go           ││  │
+│                                     │  │    (HTTP routes)    ││  │
+│                                     │  └─────────────────────┘│  │
+│                                     │            │             │  │
+│                                     │      Port: 8080         │  │
+│                                     └────────────┬────────────┘  │
+└──────────────────────────────────────────────────┼──────────────┘
+                                                   │
+                                                   ▼
+                                          ┌───────────────┐
+                                          │   Browser     │
+                                          │   Dashboard   │
+                                          │  (HTML/JS)    │
+                                          └───────────────┘
+</code></pre>
+<hr>
+<h1 id="✅-sažetak-ključnih-koncepata">✅ SAŽETAK KLJUČNIH KONCEPATA</h1>
+<table>
+<thead>
+<tr>
+<th>Koncept</th>
+<th>Objašnjenje</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Docker</strong></td>
+<td>Kontejnerizacija aplikacija</td>
+</tr>
+<tr>
+<td><strong>Docker Compose</strong></td>
+<td>Orkestracija više kontejnera</td>
+</tr>
+<tr>
+<td><strong>Go</strong></td>
+<td>Programski jezik za backend</td>
+</tr>
+<tr>
+<td><strong>Goroutine</strong></td>
+<td>Lagana konkurentna nit</td>
+</tr>
+<tr>
+<td><strong>Channel</strong></td>
+<td>Komunikacija između goroutina</td>
+</tr>
+<tr>
+<td><strong>MQTT</strong></td>
+<td>Lagani messaging protokol za IoT</td>
+</tr>
+<tr>
+<td><strong>Pub/Sub</strong></td>
+<td>Publisher/Subscriber pattern</td>
+</tr>
+<tr>
+<td><strong>TimescaleDB</strong></td>
+<td>Baza za vremenske serije</td>
+</tr>
+<tr>
+<td><strong>Hypertable</strong></td>
+<td>Automatsko particioniranje</td>
+</tr>
+<tr>
+<td><strong>WebSocket</strong></td>
+<td>Dvosmjerna real-time komunikacija</td>
+</tr>
+<tr>
+<td><strong>REST API</strong></td>
+<td>HTTP endpoint za podatke</td>
+</tr>
+<tr>
+<td><strong>Gin</strong></td>
+<td>Go web framework</td>
+</tr>
+<tr>
+<td><strong>Basic Auth</strong></td>
+<td>HTTP autentifikacija</td>
+</tr>
+<tr>
+<td><strong>Bcrypt</strong></td>
+<td>Sigurno hashiranje lozinki</td>
+</tr>
+<tr>
+<td><strong>Connection Pool</strong></td>
+<td>Ponovno korištenje DB konekcija</td>
+</tr>
+<tr>
+<td><strong>Context</strong></td>
+<td>Timeout i cancellation</td>
+</tr>
+<tr>
+<td><strong>Middleware</strong></td>
+<td>Filter za HTTP zahtjeve</td>
+</tr>
+<tr>
+<td><strong>Chart.js</strong></td>
+<td>JavaScript biblioteka za grafove</td>
+</tr>
+<tr>
+<td><strong>Flexbox</strong></td>
+<td>CSS layout model</td>
+</tr>
+<tr>
+<td><strong>Multi-stage Build</strong></td>
+<td>Dockerfile optimizacija</td>
+</tr>
+</tbody></table>
+<hr>
+<p><em>Ovaj dokument detaljno objašnjava svaku liniju koda i sve koncepte potrebne za razumijevanje EdgeAI projekta.</em></p>
+
+	
+
+</body></html>

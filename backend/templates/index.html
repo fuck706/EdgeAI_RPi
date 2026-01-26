@@ -1,0 +1,75 @@
+<!--
+ *  index.html
+ * 
+ * Real-time prikaz kvarova
+ * Koristi Chart.js za grafički prikaz i WebSocket za live podatke
+ -->
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>EdgeAI - Kontrolna ploča</title>
+  <meta name="description" content="Real-time monitoring sustav za prediktivno održavanje industrijskih motora">
+  
+  <link rel="stylesheet" href="../static/style.css">
+</head>
+<body>
+  <header class="page-header" role="banner">
+    <div class="header-title">
+      <h1>Edge AI prediktivno održavanje sustava u industriji™</h1>
+      <p class="subtitle">
+        EdgeAI (nRF5340DK-TinyML) → MQTT Broker → GO Backend + TimescaleDB + WEB dashboard (RPi)
+      </p>
+    </div>
+    <div class="header-logo">
+      <img src="../static/logo.png" alt="EdgeAI Systems Logo" width="150" height="100">
+    </div>
+  </header>
+  <!-- Real-time monitoring cijelog pipeline-a -->
+  <div id="status-bar" role="status" aria-live="polite">
+    MQTT Broker: <span id="mqtt-status" aria-label="MQTT status">Checking...</span> | 
+    Baza podataka: <span id="db-status" aria-label="Database status">Checking...</span>
+  </div>
+
+  <!-- Glavni dashboard -->
+     <main class="dashboard-container" role="main">
+
+     <!-- Lijevo: lista kvarova -->
+    <section class="faults-panel" aria-labelledby="faults-panel-title">
+      <h2 id="faults-panel-title">Detektirani kvarovi:</h2>
+      <div class="faults-panel-content" id="sensor-data" role="log" aria-live="polite">
+    <!-- JavaScript će ovdje dodavati kvarove -->
+      </div>
+    </section>
+    
+     <!-- Desno: graf -->
+    <section class="chart-panel" aria-labelledby="chart-panel-title">
+      <h2 id="chart-panel-title">Grafički prikaz kvarova:</h2>
+      <div class="chart-panel-content">
+        <canvas 
+          id="faultChart" 
+          role="img" 
+          aria-label="Grafički prikaz abnormalnih vrijednosti kroz vrijeme"
+          width="400" 
+          height="300">
+        </canvas>
+      </div>
+    </section>
+    <div class="credits-box">
+      <div class="credits">
+        <p>Credits:</p>
+        <p>Mentor: Dejan Rakijašić</p>
+        <p>Back-end: Gabriel Pav</p>
+        <p>Front-end: Vigo Belčić</p>
+      </div>
+    </div>
+    <div class="header-actions">
+      <a href="/logout" class="logout-button">Odjava</a>
+    </div>
+  </main>
+ <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="/EdgeAI_RPi_Docker/backend/static/script.js"></script>
+</body>
+</html>
