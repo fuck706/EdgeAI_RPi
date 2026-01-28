@@ -53,8 +53,8 @@ func initConfig() Config {
 
 		ServerAddr: getEnv("SERVER_ADDR", "0.0.0.0:8080"),
 
-		DashboardUser: getEnv("DASH_USER", "admin"),
-		DashboardPass: getEnv("DASH_PASS", "admin12345678"),
+		DashboardUser: getEnv("DASH_USER", ""),
+		DashboardPass: getEnv("DASH_PASS", ""),
 	}
 
 	// HASH LOZINKE - prvo DASH_PASS_HASH, pa plaintext fallback
