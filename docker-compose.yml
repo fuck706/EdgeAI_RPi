@@ -40,8 +40,8 @@ services:
       POSTGRES_URL: "postgres://edgeai:edgeai@db:5432/edgeai?sslmode=disable"
       MQTT_BROKER: "tcp://mqtt:1883"
       SERVER_ADDR: "0.0.0.0:8080"
-      DASH_USER: "admin"
-      DASH_PASS: "admin123"
+      DASH_USER: "${DASH_USER}"
+      DASH_PASS: "${DASH_PASS}"
     ports:
       - "8080:8080"
     restart: unless-stopped
